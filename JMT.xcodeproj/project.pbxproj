@@ -11,6 +11,9 @@
 		5621704A2A2ACC870007A621 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 562170492A2ACC870007A621 /* GoogleService-Info.plist */; };
 		5621704D2A2ACD090007A621 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5621704C2A2ACD090007A621 /* FirebaseFirestore */; };
 		5621704F2A2ACD090007A621 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 5621704E2A2ACD090007A621 /* FirebaseStorage */; };
+		56250A352A304E1100F80B87 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56250A342A304E1100F80B87 /* Database.swift */; };
+		56250A372A3053C100F80B87 /* GroupCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56250A362A3053C100F80B87 /* GroupCodeViewController.swift */; };
+		567217ED2A2C358B004AAF91 /* JMT_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 567217EC2A2C358B004AAF91 /* JMT_logo.png */; };
 		56CA9AD52A28500C006FF32B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CA9AD42A28500C006FF32B /* AppDelegate.swift */; };
 		56CA9AD72A28500C006FF32B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CA9AD62A28500C006FF32B /* SceneDelegate.swift */; };
 		56CA9AD92A28500C006FF32B /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CA9AD82A28500C006FF32B /* StartViewController.swift */; };
@@ -22,6 +25,9 @@
 /* Begin PBXFileReference section */
 		18E831EACDC540BABC72F839 /* Pods_JMT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JMT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		562170492A2ACC870007A621 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		56250A342A304E1100F80B87 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		56250A362A3053C100F80B87 /* GroupCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCodeViewController.swift; sourceTree = "<group>"; };
+		567217EC2A2C358B004AAF91 /* JMT_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JMT_logo.png; sourceTree = "<group>"; };
 		56CA9AD12A28500C006FF32B /* JMT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CA9AD42A28500C006FF32B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56CA9AD62A28500C006FF32B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		567217EB2A2C3571004AAF91 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				567217EC2A2C358B004AAF91 /* JMT_logo.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		56CA9AC82A28500C006FF32B = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +83,7 @@
 		56CA9AD32A28500C006FF32B /* JMT */ = {
 			isa = PBXGroup;
 			children = (
+				567217EB2A2C3571004AAF91 /* images */,
 				56CA9AD42A28500C006FF32B /* AppDelegate.swift */,
 				56CA9AD62A28500C006FF32B /* SceneDelegate.swift */,
 				56CA9AD82A28500C006FF32B /* StartViewController.swift */,
@@ -77,6 +92,8 @@
 				56CA9ADF2A28500D006FF32B /* LaunchScreen.storyboard */,
 				56CA9AE22A28500D006FF32B /* Info.plist */,
 				562170492A2ACC870007A621 /* GoogleService-Info.plist */,
+				56250A342A304E1100F80B87 /* Database.swift */,
+				56250A362A3053C100F80B87 /* GroupCodeViewController.swift */,
 			);
 			path = JMT;
 			sourceTree = "<group>";
@@ -168,6 +185,7 @@
 				56CA9AE12A28500D006FF32B /* LaunchScreen.storyboard in Resources */,
 				5621704A2A2ACC870007A621 /* GoogleService-Info.plist in Resources */,
 				56CA9ADE2A28500D006FF32B /* Assets.xcassets in Resources */,
+				567217ED2A2C358B004AAF91 /* JMT_logo.png in Resources */,
 				56CA9ADC2A28500C006FF32B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +241,8 @@
 			files = (
 				56CA9AD92A28500C006FF32B /* StartViewController.swift in Sources */,
 				56CA9AD52A28500C006FF32B /* AppDelegate.swift in Sources */,
+				56250A372A3053C100F80B87 /* GroupCodeViewController.swift in Sources */,
+				56250A352A304E1100F80B87 /* Database.swift in Sources */,
 				56CA9AD72A28500C006FF32B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

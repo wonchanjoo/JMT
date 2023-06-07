@@ -17,16 +17,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2EM-Js-1qc">
-                                <rect key="frame" x="96.666666666666686" y="159" width="200" height="100"/>
+                                <rect key="frame" x="96.666666666666686" y="179" width="200" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Awt-Yh-djs"/>
                                     <constraint firstAttribute="height" constant="100" id="Guv-Qz-MAm"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ps-bh-7DV">
-                                <rect key="frame" x="20" y="359" width="353" height="34.333333333333314"/>
+                                <rect key="frame" x="20" y="399" width="353" height="34.333333333333314"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="초대 코드를 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EQj-CJ-ZS6">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="그룹 코드를 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EQj-CJ-ZS6">
                                         <rect key="frame" x="0.0" y="0.0" width="299.33333333333331" height="34.333333333333336"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -35,17 +35,20 @@
                                         <rect key="frame" x="299.33333333333331" y="0.0" width="53.666666666666686" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="확인"/>
+                                        <connections>
+                                            <action selector="validCode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dW1-Ig-zuk"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="존재하지 않는 초대코드입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzD-U8-WPH">
-                                <rect key="frame" x="94.333333333333329" y="403.33333333333331" width="204.66666666666669" height="20.333333333333314"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="존재하지 않는 그룹 코드입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzD-U8-WPH">
+                                <rect key="frame" x="92" y="433.33333333333331" width="209" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IXS-lO-yjE">
-                                <rect key="frame" x="85.666666666666686" y="443.66666666666669" width="222" height="34.333333333333314"/>
+                                <rect key="frame" x="85.666666666666686" y="458.66666666666669" width="222" height="34.333333333333314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 코드가 없나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zU5-rx-OpF">
                                         <rect key="frame" x="0.0" y="0.0" width="134.66666666666666" height="34.333333333333336"/>
@@ -57,11 +60,14 @@
                                         <rect key="frame" x="134.66666666666669" y="0.0" width="87.333333333333314" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="코드 생성"/>
+                                        <connections>
+                                            <action selector="createCode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zMz-Kg-LYd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="초대코드가 클립보드에 복사되었습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhl-0s-fiR">
-                                <rect key="frame" x="65" y="488" width="263.33333333333331" height="20.333333333333314"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="그룹 코드가 클립보드에 복사되었습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhl-0s-fiR">
+                                <rect key="frame" x="62.666666666666657" y="493" width="267.66666666666674" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
@@ -70,23 +76,82 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="2ps-bh-7DV" firstAttribute="top" secondItem="2EM-Js-1qc" secondAttribute="bottom" constant="100" id="6Kv-DL-AZt"/>
+                            <constraint firstItem="2ps-bh-7DV" firstAttribute="top" secondItem="2EM-Js-1qc" secondAttribute="bottom" constant="120" id="6Kv-DL-AZt"/>
                             <constraint firstItem="2EM-Js-1qc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7eP-sH-2f9"/>
                             <constraint firstItem="IXS-lO-yjE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Eb4-dF-AH2"/>
                             <constraint firstItem="xzD-U8-WPH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HBe-Qz-gM4"/>
                             <constraint firstItem="lhl-0s-fiR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pnw-T4-Rgh"/>
-                            <constraint firstItem="IXS-lO-yjE" firstAttribute="top" secondItem="xzD-U8-WPH" secondAttribute="bottom" constant="20" id="Qa9-I3-ZoQ"/>
+                            <constraint firstItem="IXS-lO-yjE" firstAttribute="top" secondItem="xzD-U8-WPH" secondAttribute="bottom" constant="5" id="Qa9-I3-ZoQ"/>
                             <constraint firstItem="2ps-bh-7DV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="bD2-FF-kJu"/>
-                            <constraint firstItem="xzD-U8-WPH" firstAttribute="top" secondItem="2ps-bh-7DV" secondAttribute="bottom" constant="10" id="dhL-17-yh7"/>
+                            <constraint firstItem="xzD-U8-WPH" firstAttribute="top" secondItem="2ps-bh-7DV" secondAttribute="bottom" id="dhL-17-yh7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2ps-bh-7DV" secondAttribute="trailing" constant="20" id="h1Q-NZ-YJO"/>
-                            <constraint firstItem="lhl-0s-fiR" firstAttribute="top" secondItem="IXS-lO-yjE" secondAttribute="bottom" constant="10" id="iRp-6R-QBk"/>
-                            <constraint firstItem="2EM-Js-1qc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="uyW-FN-3tb"/>
+                            <constraint firstItem="lhl-0s-fiR" firstAttribute="top" secondItem="IXS-lO-yjE" secondAttribute="bottom" id="iRp-6R-QBk"/>
+                            <constraint firstItem="2EM-Js-1qc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="uyW-FN-3tb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="codeTextField" destination="EQj-CJ-ZS6" id="4rf-7G-ZfP"/>
+                        <outlet property="copyMessage" destination="lhl-0s-fiR" id="jof-oV-teZ"/>
+                        <outlet property="errorMessage" destination="xzD-U8-WPH" id="MMd-2d-4G7"/>
+                        <outlet property="logoImageView" destination="2EM-Js-1qc" id="I7b-xm-j6E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="100" y="4"/>
+        </scene>
+        <!--Group Code View Controller-->
+        <scene sceneID="L0R-9e-lXb">
+            <objects>
+                <viewController storyboardIdentifier="GroupCodeDialog" id="1Z5-af-zK8" customClass="GroupCodeViewController" customModule="JMT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qmk-AS-rV3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1s-cC-HnL">
+                                <rect key="frame" x="66.666666666666686" y="361" width="260" height="130"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="그룹 이름을 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wFv-3l-eGh">
+                                        <rect key="frame" x="10" y="20" width="240" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bK0-0d-sg1">
+                                        <rect key="frame" x="50" y="75" width="54" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="취소"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOr-bP-KMv">
+                                        <rect key="frame" x="156" y="75" width="54" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="확인"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="FOr-bP-KMv" secondAttribute="bottom" constant="20" id="0rD-Rg-siY"/>
+                                    <constraint firstAttribute="trailing" secondItem="wFv-3l-eGh" secondAttribute="trailing" constant="10" id="41V-lw-phQ"/>
+                                    <constraint firstAttribute="height" constant="130" id="6gP-jq-9xy"/>
+                                    <constraint firstItem="wFv-3l-eGh" firstAttribute="leading" secondItem="u1s-cC-HnL" secondAttribute="leading" constant="10" id="E3C-BB-sAe"/>
+                                    <constraint firstItem="bK0-0d-sg1" firstAttribute="leading" secondItem="u1s-cC-HnL" secondAttribute="leading" constant="50" id="W8o-as-ehF"/>
+                                    <constraint firstAttribute="width" constant="260" id="WhY-7I-NN1"/>
+                                    <constraint firstAttribute="trailing" secondItem="FOr-bP-KMv" secondAttribute="trailing" constant="50" id="cnq-HB-Lyf"/>
+                                    <constraint firstItem="wFv-3l-eGh" firstAttribute="top" secondItem="u1s-cC-HnL" secondAttribute="top" constant="20" id="lBq-2r-kfI"/>
+                                    <constraint firstAttribute="bottom" secondItem="bK0-0d-sg1" secondAttribute="bottom" constant="20" id="y5t-kx-eFp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Y3V-cx-mfe"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="u1s-cC-HnL" firstAttribute="centerY" secondItem="qmk-AS-rV3" secondAttribute="centerY" id="40g-Po-22m"/>
+                            <constraint firstItem="u1s-cC-HnL" firstAttribute="centerX" secondItem="qmk-AS-rV3" secondAttribute="centerX" id="gCW-UH-ygA"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1bb-R3-4sd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="819" y="4"/>
         </scene>
     </scenes>
     <resources>
