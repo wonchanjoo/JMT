@@ -9,9 +9,7 @@ import UIKit
 
 class StartViewController: UIViewController {
     @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var codeTextField: UITextField!
     @IBOutlet weak var errorMessage: UILabel!
-    @IBOutlet weak var copyMessage: UILabel!
 }
 
 extension StartViewController {
