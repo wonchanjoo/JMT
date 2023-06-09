@@ -9,11 +9,16 @@ import UIKit
 
 class StartViewController: UIViewController {
     @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var nicknameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var errorMessage: UILabel!
+    let database = Database()
 }
 
 extension StartViewController {
     override func viewDidLoad() {
         logoImageView.image = UIImage(named: "JMT_logo.png")
+        passwordField.isSecureTextEntry = true
     }
 }
 
@@ -25,5 +30,24 @@ extension StartViewController {
         signUpDialog.modalTransitionStyle = .crossDissolve
         
         self.present(signUpDialog, animated: true, completion: nil)
+    }
+    
+    @IBAction func login(_ sender: UIButton) {
+        let nickname = nicknameField.text
+        let password = passwordField.text
+        
+        if nickname == "" || password == "" {
+            errorMessage.text = "올바른 값을 입력하세요"
+            errorMessage.isHidden = false
+        } else {
+            database.validUser(nickname: nickname!, password: password!) { valid in
+                if valid {
+                    print("login 성공!")
+                } else {
+                    self.errorMessage.text = "계정이 존재하지 않거나 비밀번호가 틀렸습니다"
+                    self.errorMessage.isHidden = false
+                }
+            }
+        }
     }
 }

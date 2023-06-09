@@ -26,12 +26,11 @@ extension SignUpViewController {
         if nickname != "" && password != "" {
             let user = User(nickname: nickname, password: password)
             print("nickname = \(nickname), password = \(password)")
-            database.saveUser(key: user.key, user: user)
+            database.saveUser(user: user)
             dismiss(animated: true)
+        } else {
+            errorMessage.layer.isHidden = false
         }
-        
-        // 둘 중 하나라도 입력되지 않으면 에러 메시지 보이도록
-        errorMessage.layer.isHidden = false
     }
 }
 
