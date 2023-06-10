@@ -56,7 +56,7 @@
                                 </subviews>
                             </stackView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzD-U8-WPH">
-                                <rect key="frame" x="141.66666666666666" y="462" width="109.99999999999997" height="20.333333333333314"/>
+                                <rect key="frame" x="141.66666666666666" y="462" width="110" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -199,10 +199,98 @@
             </objects>
             <point key="canvasLocation" x="784" y="4"/>
         </scene>
-        <!--Group Code View Controller-->
+        <!--View Controller-->
+        <scene sceneID="lpo-1o-MTZ">
+            <objects>
+                <viewController id="bnq-1V-Rkv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aXH-z6-NAW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C4d-3F-McU">
+                                <rect key="frame" x="96.666666666666686" y="179" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="gAx-DS-3UY"/>
+                                    <constraint firstAttribute="width" constant="200" id="hr6-oc-7ju"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MIb-YR-mzw">
+                                <rect key="frame" x="20" y="379" width="353" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="그룹코드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQa-hS-30y">
+                                        <rect key="frame" x="0.0" y="0.0" width="59" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="그룹코드를 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WLa-hG-TUL">
+                                        <rect key="frame" x="64" y="0.0" width="289" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cC-4P-lGl">
+                                <rect key="frame" x="141.66666666666666" y="418" width="110" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bxv-P5-DfD">
+                                <rect key="frame" x="70.666666666666671" y="448.33333333333331" width="251.66666666666663" height="34.333333333333314"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 그룹코드가 없나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFs-Y1-dsm">
+                                        <rect key="frame" x="0.0" y="0.0" width="164.33333333333334" height="34.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eM-pX-ghL">
+                                        <rect key="frame" x="164.33333333333331" y="0.0" width="87.333333333333314" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="코드 생성"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YrY-cJ-xtZ">
+                                <rect key="frame" x="169.66666666666666" y="683.66666666666663" width="53.666666666666657" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="확인"/>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="그룹코드가 클립보드에 복사되었습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHx-bt-4nG">
+                                <rect key="frame" x="65" y="487.66666666666669" width="263.33333333333331" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KRr-gx-7yT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="C4d-3F-McU" firstAttribute="centerX" secondItem="aXH-z6-NAW" secondAttribute="centerX" id="6ge-2j-imh"/>
+                            <constraint firstItem="RHx-bt-4nG" firstAttribute="centerX" secondItem="aXH-z6-NAW" secondAttribute="centerX" id="8dD-rx-jOv"/>
+                            <constraint firstItem="MIb-YR-mzw" firstAttribute="top" secondItem="C4d-3F-McU" secondAttribute="bottom" constant="100" id="Lrg-nU-Gh1"/>
+                            <constraint firstItem="YrY-cJ-xtZ" firstAttribute="centerX" secondItem="aXH-z6-NAW" secondAttribute="centerX" id="Lzc-H5-sEY"/>
+                            <constraint firstItem="KRr-gx-7yT" firstAttribute="trailing" secondItem="MIb-YR-mzw" secondAttribute="trailing" constant="20" id="O7R-eJ-0wf"/>
+                            <constraint firstItem="C4d-3F-McU" firstAttribute="top" secondItem="KRr-gx-7yT" secondAttribute="top" constant="120" id="U9w-mg-Wac"/>
+                            <constraint firstItem="5cC-4P-lGl" firstAttribute="top" secondItem="MIb-YR-mzw" secondAttribute="bottom" constant="5" id="fGA-0d-FQk"/>
+                            <constraint firstItem="5cC-4P-lGl" firstAttribute="centerX" secondItem="aXH-z6-NAW" secondAttribute="centerX" id="fIG-HF-uQg"/>
+                            <constraint firstItem="MIb-YR-mzw" firstAttribute="leading" secondItem="KRr-gx-7yT" secondAttribute="leading" constant="20" id="iTu-ZZ-o7g"/>
+                            <constraint firstItem="KRr-gx-7yT" firstAttribute="bottom" secondItem="YrY-cJ-xtZ" secondAttribute="bottom" constant="100" id="lD7-ss-Iob"/>
+                            <constraint firstItem="bxv-P5-DfD" firstAttribute="centerX" secondItem="aXH-z6-NAW" secondAttribute="centerX" id="m9F-qb-ZGz"/>
+                            <constraint firstItem="bxv-P5-DfD" firstAttribute="top" secondItem="5cC-4P-lGl" secondAttribute="bottom" constant="10" id="snf-3h-e6R"/>
+                            <constraint firstItem="RHx-bt-4nG" firstAttribute="top" secondItem="bxv-P5-DfD" secondAttribute="bottom" constant="5" id="xEd-7B-dWO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zF6-3r-CfG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100" y="667"/>
+        </scene>
+        <!--Create Group Code View Controller-->
         <scene sceneID="L0R-9e-lXb">
             <objects>
-                <viewController storyboardIdentifier="GroupCodeDialog" id="1Z5-af-zK8" customClass="GroupCodeViewController" customModule="JMT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GroupCodeDialog" id="1Z5-af-zK8" customClass="CreateGroupCodeViewController" customModule="JMT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qmk-AS-rV3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -250,12 +338,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bb-R3-4sd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1482" y="4"/>
+            <point key="canvasLocation" x="784" y="667"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

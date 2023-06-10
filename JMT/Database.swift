@@ -43,7 +43,7 @@ extension Database {
     func haveGroupCode(nickname: String, completion: @escaping (Bool) -> Void) {
         let ref = db.collection("User").document(nickname)
         ref.getDocument{ (document, error) in
-            if let groupCode = document?.data()?["group_code"] as? String {
+            if document?.data()?["group_code"] is String {
                 completion(true)
             } else {
                 completion(false)

@@ -22,6 +22,7 @@
 		56CA9AE12A28500D006FF32B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56CA9ADF2A28500D006FF32B /* LaunchScreen.storyboard */; };
 		56F53AA72A30D9A300220679 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F53AA62A30D9A300220679 /* SignUpViewController.swift */; };
 		56F53AA92A30DC1A00220679 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F53AA82A30DC1A00220679 /* User.swift */; };
+		56F53AAB2A341AD200220679 /* CreateGroupCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F53AAA2A341AD200220679 /* CreateGroupCodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		56CA9AE22A28500D006FF32B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56F53AA62A30D9A300220679 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		56F53AA82A30DC1A00220679 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		56F53AAA2A341AD200220679 /* CreateGroupCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupCodeViewController.swift; sourceTree = "<group>"; };
 		D386CB43F0702BBF3E3C620B /* Pods-JMT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMT.release.xcconfig"; path = "Target Support Files/Pods-JMT/Pods-JMT.release.xcconfig"; sourceTree = "<group>"; };
 		EE1C6397F023A59228BB5B71 /* Pods-JMT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMT.debug.xcconfig"; path = "Target Support Files/Pods-JMT/Pods-JMT.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +102,7 @@
 				56250A362A3053C100F80B87 /* GroupCodeViewController.swift */,
 				56F53AA62A30D9A300220679 /* SignUpViewController.swift */,
 				56F53AA82A30DC1A00220679 /* User.swift */,
+				56F53AAA2A341AD200220679 /* CreateGroupCodeViewController.swift */,
 			);
 			path = JMT;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56F53AA72A30D9A300220679 /* SignUpViewController.swift in Sources */,
+				56F53AAB2A341AD200220679 /* CreateGroupCodeViewController.swift in Sources */,
 				56CA9AD92A28500C006FF32B /* StartViewController.swift in Sources */,
 				56CA9AD52A28500C006FF32B /* AppDelegate.swift in Sources */,
 				56250A372A3053C100F80B87 /* GroupCodeViewController.swift in Sources */,

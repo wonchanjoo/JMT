@@ -41,9 +41,15 @@ extension StartViewController {
             errorMessage.isHidden = false
         } else {
             database.validUser(nickname: nickname!, password: password!) { valid in
-                if valid {
-                    print("login 성공!")
-                } else {
+                if valid { // 로그인 성공
+                    self.database.haveGroupCode(nickname: nickname!) { haveGroup in
+                        if haveGroup { // 그룹 코드가 이미 있는 경우
+                            
+                        } else { // 그룹 코드가 없는 경우
+                            
+                        }
+                    }
+                } else { // 로그인 실패
                     self.errorMessage.text = "계정이 존재하지 않거나 비밀번호가 틀렸습니다"
                     self.errorMessage.isHidden = false
                 }
