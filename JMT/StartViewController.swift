@@ -46,7 +46,9 @@ extension StartViewController {
                         if haveGroup { // 그룹 코드가 이미 있는 경우
                             
                         } else { // 그룹 코드가 없는 경우
-                            
+                            let groupCodeViewController = self.storyboard?.instantiateViewController(withIdentifier: "GroupCode") as! GroupCodeViewController
+                            groupCodeViewController.nickname = nickname
+                            self.navigationController?.pushViewController(groupCodeViewController, animated: true)
                         }
                     }
                 } else { // 로그인 실패
