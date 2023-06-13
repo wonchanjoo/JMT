@@ -19,6 +19,7 @@ extension StartViewController {
     override func viewDidLoad() {
         logoImageView.image = UIImage(named: "JMT_logo.png")
         passwordField.isSecureTextEntry = true
+        errorMessage.isHidden = true
     }
 }
 
@@ -35,6 +36,7 @@ extension StartViewController {
     @IBAction func login(_ sender: UIButton) {
         let nickname = nicknameField.text
         let password = passwordField.text
+        print("nickname = \(nickname), password = \(password)")
         
         if nickname == "" || password == "" {
             errorMessage.text = "올바른 값을 입력하세요"
@@ -44,7 +46,9 @@ extension StartViewController {
                 if valid { // 로그인 성공
                     self.database.haveGroupCode(nickname: nickname!) { haveGroup in
                         if haveGroup { // 그룹 코드가 이미 있는 경우
+                            let mainViewController = self.storyboard?.instantiateViewController(withIdentifier: "Main") as! MainViewController
                             
+                            self.navigationController?.pushViewController(mainViewController, animated: true)
                         } else { // 그룹 코드가 없는 경우
                             let groupCodeViewController = self.storyboard?.instantiateViewController(withIdentifier: "GroupCode") as! GroupCodeViewController
                             groupCodeViewController.nickname = nickname

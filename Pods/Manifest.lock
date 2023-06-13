@@ -2,19 +2,23 @@ PODS:
   - NMapsGeometry (1.0.1)
   - NMapsMap (3.16.2):
     - NMapsGeometry
+  - SideMenu (6.5.0)
 
 DEPENDENCIES:
   - NMapsMap
+  - SideMenu
 
 SPEC REPOS:
   trunk:
     - NMapsGeometry
     - NMapsMap
+    - SideMenu
 
 SPEC CHECKSUMS:
   NMapsGeometry: 53c573ead66466681cf123f99f698dc8071a4b83
   NMapsMap: aaa64717249b06ae82c3a3addb3a01f0e33100ab
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
 
-PODFILE CHECKSUM: 32b71703ef23ee61f2dd7dd5471cdd866dad68f6
+PODFILE CHECKSUM: af330b70a3ac2c590358db769b8091c6e12bb96f
 
 COCOAPODS: 1.12.0

@@ -58,6 +58,32 @@ extension Database {
         db.collection("Group").document(code).setData(["name": name])
     }
     
+    func addGroupUser(code: String, nickname: String) {
+        db.collection("User").document(nickname).updateData(["group_code": code])
+        db.collection("Group").document(code).getDocument { (document, error) in
+            if let document = document, document.exists {
+                var users = document.data()?["users"] as? [String] ?? []
+                users.append(nickname) // add new user
+                self.db.collection("Group").document(code).updateData(["users": users]) // DB에 저장
+            }
+        }
+    }
+    
+    func getGroupList(completion: @escaping ([QueryDocumentSnapshot]?, Error?) -> Void) {
+        db.collection("Group").getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("getGroupList error: \(error.localizedDescription)")
+                completion(nil, error)
+            } else {
+                guard let groupList = querySnapshot?.documents else {
+                    print("GroupList가 존재하지 않습니다.")
+                    completion(nil, nil)
+                    return
+                }
+                completion(groupList, nil)
+            }
+        }
+    }
 }
 
 // 가게

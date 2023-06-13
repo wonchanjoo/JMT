@@ -24,120 +24,202 @@
 				B521269790554904B95202DE2D5AC59C /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
-				258F097AFE79EE06421A954BF7063DC2 /* PBXTargetDependency */,
+				6FE0EF37638A9B07349DCAEA124B8F3A /* PBXTargetDependency */,
 			);
 			name = NMapsMap;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		536D4900D555395B948435B69293A6BC /* Pods-JMT-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 70F4AFE30436E38E5B2392A7A616749E /* Pods-JMT-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5EDE18E99C36A651368426FEE35B4ABA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		6BC4ED641D93F7F3F0665DC4362D2583 /* Pods-JMT-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F02EFBCDBDE92396A264F370D10D90 /* Pods-JMT-dummy.m */; };
+		057B453F4AE14D10EA77D38FA1A0B8FB /* SideMenuPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2699B49AEB6728A2DC24E341D9C68A /* SideMenuPresentationController.swift */; };
+		1F0DDBBAF86A028D6D60A7E10B4D3634 /* SideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5A5245D3A040F6FCBFB647BCAC5AD0 /* SideMenu-dummy.m */; };
+		3817F4830A10E51D20B72530EF6A56D2 /* SideMenuTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C174389E7719207DD170637180AF7631 /* SideMenuTransitionController.swift */; };
+		5587C359D9C8789950E7F6585C2292E7 /* SideMenuPresentationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3B33EDAD689FEC260EE5A369749359 /* SideMenuPresentationStyle.swift */; };
+		74106BDED4B8B2281DFE4BE5E109D847 /* Initializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893F24980C75D37DB76769C92775E5C4 /* Initializable.swift */; };
+		887D7E546D6837CC964318D1B0C842D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		8B18E3B7DCE9096ADD9FFEBE9118420A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		9E9F19E0120EA3C46967C28E637F52C8 /* SideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C74EC67434A68DDFEAA2862E077F53 /* SideMenuNavigationController.swift */; };
+		B668826B497F88C270C817CE5AFF89D8 /* Pods-JMT-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F02EFBCDBDE92396A264F370D10D90 /* Pods-JMT-dummy.m */; };
+		B804587E525773FCA9698855B2C752DC /* SideMenuAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E684DFC00F3CA924652313DAAD9D01C /* SideMenuAnimationController.swift */; };
+		BC9C2E663681EDDBFE985034DCC7AAAF /* UITableViewVibrantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C131D0A956424186457D32D8D97A48 /* UITableViewVibrantCell.swift */; };
+		BE79F903F87E7D5918C6414E6203743E /* Print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B187A2B6BF4EDE98D50B439DA4E91FF /* Print.swift */; };
+		CD5E62E8CC73923E270CDA40B070B38C /* Pods-JMT-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 70F4AFE30436E38E5B2392A7A616749E /* Pods-JMT-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3BE0026C39E4B360BBDA0D5C57DD25D /* Deprecations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F142CF2B4DD9344030C383979871805 /* Deprecations.swift */; };
+		DAD5950A205347FCDBD3751604472431 /* Protected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355E7E4001BE56AF898275736F43EF99 /* Protected.swift */; };
+		E56EEF71CC5AF0DA40228F2CA67B4BA0 /* SideMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B678C9A11B906629F547D9ED476F779 /* SideMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E709C98B763E8065628D8E88715E0BF8 /* SideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB91EEEFD1A6E84B10C04417259182C /* SideMenuManager.swift */; };
+		E72252B09CC270B50217CA6AEABD620A /* SideMenuPushCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6D6E6B4FCE3780D5027FF432ACEC75 /* SideMenuPushCoordinator.swift */; };
+		E97C7A323474D0205E872AE7BC773650 /* SideMenuInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A79D087612210E3B9B332D36C81F2B /* SideMenuInteractionController.swift */; };
+		F28D439429A375B6D4FCD037ED317CD6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D18A7068EB50AD965FC1C6844567EC0 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		73DEE8CBDAEFE5A76D0CF7E27239F721 /* PBXContainerItemProxy */ = {
+		466629F9F4E4C3715B9DB64659080839 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72E614C823EA09AB1AAE80D5CD8A4C58;
+			remoteInfo = NMapsGeometry;
+		};
+		704D9660E449988764664DC03712DCCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72E614C823EA09AB1AAE80D5CD8A4C58;
+			remoteInfo = NMapsGeometry;
+		};
+		7B716D57B3324E26CE2BCE11D33F0F27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4A0A7D8591B67FB75E2E8D215E3735B;
+			remoteInfo = SideMenu;
+		};
+		9D969877DE14FA1DBDBAE37BDFD5C8E3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8E049F5F4E3BDC647F924FEF22D49D90;
 			remoteInfo = NMapsMap;
 		};
-		7F00C360A1E47BCFA7970B4BBEC51126 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 72E614C823EA09AB1AAE80D5CD8A4C58;
-			remoteInfo = NMapsGeometry;
-		};
-		DDEA547DC5337F97D5ACBCE50F68D8F4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 72E614C823EA09AB1AAE80D5CD8A4C58;
-			remoteInfo = NMapsGeometry;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0970046F7060534BA9B286629593DA0C /* NMapsMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsMap.debug.xcconfig; sourceTree = "<group>"; };
-		1A326C79B1B897CBCFDC36BFF5174A43 /* NMapsGeometry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsGeometry.debug.xcconfig; sourceTree = "<group>"; };
 		214DBE6FE76524A94BB926A917A51B29 /* Pods-JMT-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JMT-Info.plist"; sourceTree = "<group>"; };
+		2B187A2B6BF4EDE98D50B439DA4E91FF /* Print.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Print.swift; path = Pod/Classes/Print.swift; sourceTree = "<group>"; };
+		2F142CF2B4DD9344030C383979871805 /* Deprecations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecations.swift; path = Pod/Classes/Deprecations.swift; sourceTree = "<group>"; };
+		319D06AA0D1D0BA345459C039040A1ED /* SideMenu */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SideMenu; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		355E7E4001BE56AF898275736F43EF99 /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protected.swift; path = Pod/Classes/Protected.swift; sourceTree = "<group>"; };
 		396A9D189ACAE940372C7EB3961D6020 /* Pods-JMT.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JMT.modulemap"; sourceTree = "<group>"; };
 		3A13F3CBF87A7BE9F32E393D58066C4C /* Pods-JMT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JMT.debug.xcconfig"; sourceTree = "<group>"; };
-		485FAE6318CCD7779377C7AA4A7B3528 /* NMapsGeometry.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = NMapsGeometry.xcframework; path = framework/NMapsGeometry.xcframework; sourceTree = "<group>"; };
+		41C131D0A956424186457D32D8D97A48 /* UITableViewVibrantCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITableViewVibrantCell.swift; path = Pod/Classes/UITableViewVibrantCell.swift; sourceTree = "<group>"; };
 		48F02EFBCDBDE92396A264F370D10D90 /* Pods-JMT-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JMT-dummy.m"; sourceTree = "<group>"; };
-		4F0C55D25B9900DE7936740E68EFDFCF /* NMapsMap.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = NMapsMap.xcframework; path = framework/NMapsMap.xcframework; sourceTree = "<group>"; };
-		53BB18D8DE6118DEC0AAC01027DBECA8 /* NMapsMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsMap.release.xcconfig; sourceTree = "<group>"; };
+		4DD77E22045634112ADA8A18E2CBA1E1 /* NMapsGeometry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsGeometry.release.xcconfig; sourceTree = "<group>"; };
+		563B7636287E6CC8555DD6E218D50598 /* SideMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.release.xcconfig; sourceTree = "<group>"; };
+		58A79D087612210E3B9B332D36C81F2B /* SideMenuInteractionController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuInteractionController.swift; path = Pod/Classes/SideMenuInteractionController.swift; sourceTree = "<group>"; };
+		5E684DFC00F3CA924652313DAAD9D01C /* SideMenuAnimationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuAnimationController.swift; path = Pod/Classes/SideMenuAnimationController.swift; sourceTree = "<group>"; };
+		5F6B0252C044DD3F4F787A9A25F593E1 /* NMapsMap-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "NMapsMap-xcframeworks.sh"; sourceTree = "<group>"; };
 		615C79CCD2EA572B9382990DB551DE6D /* Pods-JMT-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JMT-frameworks.sh"; sourceTree = "<group>"; };
+		6487F79409D232518253757B7DA82573 /* SideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-prefix.pch"; sourceTree = "<group>"; };
 		69DFAAF49B060402EE05037C4D098CDB /* Pods-JMT */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-JMT"; path = Pods_JMT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B3B33EDAD689FEC260EE5A369749359 /* SideMenuPresentationStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuPresentationStyle.swift; path = Pod/Classes/SideMenuPresentationStyle.swift; sourceTree = "<group>"; };
+		6B5A5245D3A040F6FCBFB647BCAC5AD0 /* SideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SideMenu-dummy.m"; sourceTree = "<group>"; };
+		6B678C9A11B906629F547D9ED476F779 /* SideMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-umbrella.h"; sourceTree = "<group>"; };
 		70F4AFE30436E38E5B2392A7A616749E /* Pods-JMT-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JMT-umbrella.h"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7F89040B8DC7FC773592AA5FE110E9DF /* NMapsGeometry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsGeometry.release.xcconfig; sourceTree = "<group>"; };
+		7A7D87ED6E3C1E00026B31EE3847D5E9 /* NMapsMap.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = NMapsMap.xcframework; path = framework/NMapsMap.xcframework; sourceTree = "<group>"; };
+		80355F1CED4E57C8FC1EF01B5918935E /* NMapsMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsMap.release.xcconfig; sourceTree = "<group>"; };
 		884CD1EC8D4B79A2DC03593D35ED64CB /* Pods-JMT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JMT.release.xcconfig"; sourceTree = "<group>"; };
-		983FCEF2808419DF12F69DFEBD7685D4 /* NMapsMap-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "NMapsMap-xcframeworks.sh"; sourceTree = "<group>"; };
+		893F24980C75D37DB76769C92775E5C4 /* Initializable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Initializable.swift; path = Pod/Classes/Initializable.swift; sourceTree = "<group>"; };
+		8D18A7068EB50AD965FC1C6844567EC0 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Pod/Classes/Extensions.swift; sourceTree = "<group>"; };
+		8F2699B49AEB6728A2DC24E341D9C68A /* SideMenuPresentationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuPresentationController.swift; path = Pod/Classes/SideMenuPresentationController.swift; sourceTree = "<group>"; };
+		914AECE3F8C47368FE51211E0CBBD453 /* NMapsGeometry.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = NMapsGeometry.xcframework; path = framework/NMapsGeometry.xcframework; sourceTree = "<group>"; };
 		9C6554EB4E6B4DB63EEED9AA67E2D7AC /* Pods-JMT-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JMT-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A9F8CF3F10076CF447CA74E18222BD03 /* SideMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SideMenu.modulemap; sourceTree = "<group>"; };
+		AD1BF748EF84DB938313BB32235541E0 /* NMapsMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsMap.debug.xcconfig; sourceTree = "<group>"; };
+		B2C74EC67434A68DDFEAA2862E077F53 /* SideMenuNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuNavigationController.swift; path = Pod/Classes/SideMenuNavigationController.swift; sourceTree = "<group>"; };
 		B3B8925F43CE31DF480FCA3A50607A72 /* Pods-JMT-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JMT-acknowledgements.plist"; sourceTree = "<group>"; };
-		E101130795B024FC83E4F774AA209B18 /* NMapsGeometry-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "NMapsGeometry-xcframeworks.sh"; sourceTree = "<group>"; };
+		BA6D6E6B4FCE3780D5027FF432ACEC75 /* SideMenuPushCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuPushCoordinator.swift; path = Pod/Classes/SideMenuPushCoordinator.swift; sourceTree = "<group>"; };
+		BC2DE21B67AD1AA2270FF90FF96B4E1C /* NMapsGeometry-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "NMapsGeometry-xcframeworks.sh"; sourceTree = "<group>"; };
+		C174389E7719207DD170637180AF7631 /* SideMenuTransitionController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuTransitionController.swift; path = Pod/Classes/SideMenuTransitionController.swift; sourceTree = "<group>"; };
+		C6C0DBDF6BC4092AAE9CEEEAD18FCF70 /* NMapsGeometry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMapsGeometry.debug.xcconfig; sourceTree = "<group>"; };
+		C79742CDF8FD7D4B59C10E643A507FEF /* SideMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.debug.xcconfig; sourceTree = "<group>"; };
+		CAB91EEEFD1A6E84B10C04417259182C /* SideMenuManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuManager.swift; path = Pod/Classes/SideMenuManager.swift; sourceTree = "<group>"; };
+		F605FE1A1AC0FD5EF9ECEE64FA4D6408 /* SideMenu-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SideMenu-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1A2442F52107D53E1981BA102126F1DA /* Frameworks */ = {
+		10035CE6DB88CB1173C091AE0C714129 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EDE18E99C36A651368426FEE35B4ABA /* Foundation.framework in Frameworks */,
+				8B18E3B7DCE9096ADD9FFEBE9118420A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DC25AA7986F2BF0AC82E6132A31A66D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				887D7E546D6837CC964318D1B0C842D9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		169A894F474781F666BE8D90408D3828 /* Support Files */ = {
+		161BB48B9E3D02EAA3B5E8AA1840E14E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E101130795B024FC83E4F774AA209B18 /* NMapsGeometry-xcframeworks.sh */,
-				1A326C79B1B897CBCFDC36BFF5174A43 /* NMapsGeometry.debug.xcconfig */,
-				7F89040B8DC7FC773592AA5FE110E9DF /* NMapsGeometry.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/NMapsGeometry";
-			sourceTree = "<group>";
-		};
-		25B56312D79088C322C5B52238334BCC /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2FE65985C01476131D3AC219F92CC3CF /* NMapsGeometry */,
-				487B37947971C0C75B135158191A5547 /* NMapsMap */,
+				4A8A6A29D7B9F5EC4B7DDD64D61B84D6 /* NMapsGeometry */,
+				502FCFABBD3C981E35D4BE419ED3B992 /* NMapsMap */,
+				1D0C378E54B79B99FD5D4E9E78AA0FE2 /* SideMenu */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		2ED541A35C7BD1778556550CF4846D2F /* Frameworks */ = {
+		1D0C378E54B79B99FD5D4E9E78AA0FE2 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				4F0C55D25B9900DE7936740E68EFDFCF /* NMapsMap.xcframework */,
+				2F142CF2B4DD9344030C383979871805 /* Deprecations.swift */,
+				8D18A7068EB50AD965FC1C6844567EC0 /* Extensions.swift */,
+				893F24980C75D37DB76769C92775E5C4 /* Initializable.swift */,
+				2B187A2B6BF4EDE98D50B439DA4E91FF /* Print.swift */,
+				355E7E4001BE56AF898275736F43EF99 /* Protected.swift */,
+				5E684DFC00F3CA924652313DAAD9D01C /* SideMenuAnimationController.swift */,
+				58A79D087612210E3B9B332D36C81F2B /* SideMenuInteractionController.swift */,
+				CAB91EEEFD1A6E84B10C04417259182C /* SideMenuManager.swift */,
+				B2C74EC67434A68DDFEAA2862E077F53 /* SideMenuNavigationController.swift */,
+				8F2699B49AEB6728A2DC24E341D9C68A /* SideMenuPresentationController.swift */,
+				6B3B33EDAD689FEC260EE5A369749359 /* SideMenuPresentationStyle.swift */,
+				BA6D6E6B4FCE3780D5027FF432ACEC75 /* SideMenuPushCoordinator.swift */,
+				C174389E7719207DD170637180AF7631 /* SideMenuTransitionController.swift */,
+				41C131D0A956424186457D32D8D97A48 /* UITableViewVibrantCell.swift */,
+				4742951B4A0F48FEAD700EFAEC36658F /* Support Files */,
+			);
+			name = SideMenu;
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		2F49D885565919569B3C41A80A487D5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A7D87ED6E3C1E00026B31EE3847D5E9 /* NMapsMap.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2FE65985C01476131D3AC219F92CC3CF /* NMapsGeometry */ = {
+		4742951B4A0F48FEAD700EFAEC36658F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				DC955F600E602E5041F1000DC79753BB /* Frameworks */,
-				169A894F474781F666BE8D90408D3828 /* Support Files */,
+				A9F8CF3F10076CF447CA74E18222BD03 /* SideMenu.modulemap */,
+				6B5A5245D3A040F6FCBFB647BCAC5AD0 /* SideMenu-dummy.m */,
+				F605FE1A1AC0FD5EF9ECEE64FA4D6408 /* SideMenu-Info.plist */,
+				6487F79409D232518253757B7DA82573 /* SideMenu-prefix.pch */,
+				6B678C9A11B906629F547D9ED476F779 /* SideMenu-umbrella.h */,
+				C79742CDF8FD7D4B59C10E643A507FEF /* SideMenu.debug.xcconfig */,
+				563B7636287E6CC8555DD6E218D50598 /* SideMenu.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SideMenu";
+			sourceTree = "<group>";
+		};
+		4A8A6A29D7B9F5EC4B7DDD64D61B84D6 /* NMapsGeometry */ = {
+			isa = PBXGroup;
+			children = (
+				9D6018E94CCA3C15F42F18BC8568C7EE /* Frameworks */,
+				FA4817C27A3733DCD15187DDCAD89279 /* Support Files */,
 			);
 			name = NMapsGeometry;
 			path = NMapsGeometry;
 			sourceTree = "<group>";
 		};
-		487B37947971C0C75B135158191A5547 /* NMapsMap */ = {
+		502FCFABBD3C981E35D4BE419ED3B992 /* NMapsMap */ = {
 			isa = PBXGroup;
 			children = (
-				2ED541A35C7BD1778556550CF4846D2F /* Frameworks */,
-				A3E28C362EAC5C5A2CCC22EE5E2FDA30 /* Support Files */,
+				2F49D885565919569B3C41A80A487D5E /* Frameworks */,
+				CFF917DE6D918FB5320B7ECC6A55F666 /* Support Files */,
 			);
 			name = NMapsMap;
 			path = NMapsMap;
@@ -168,15 +250,12 @@
 			path = "Target Support Files/Pods-JMT";
 			sourceTree = "<group>";
 		};
-		A3E28C362EAC5C5A2CCC22EE5E2FDA30 /* Support Files */ = {
+		9D6018E94CCA3C15F42F18BC8568C7EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				983FCEF2808419DF12F69DFEBD7685D4 /* NMapsMap-xcframeworks.sh */,
-				0970046F7060534BA9B286629593DA0C /* NMapsMap.debug.xcconfig */,
-				53BB18D8DE6118DEC0AAC01027DBECA8 /* NMapsMap.release.xcconfig */,
+				914AECE3F8C47368FE51211E0CBBD453 /* NMapsGeometry.xcframework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/NMapsMap";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -184,10 +263,21 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				25B56312D79088C322C5B52238334BCC /* Pods */,
-				F0691F5BBCE50538CA33423BED86B5B5 /* Products */,
+				161BB48B9E3D02EAA3B5E8AA1840E14E /* Pods */,
+				DB2662BF97EEAAC14AFE06B3B46B5EC6 /* Products */,
 				E9283C7043AE4C6BBEE0F50168BA2DA2 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		CFF917DE6D918FB5320B7ECC6A55F666 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5F6B0252C044DD3F4F787A9A25F593E1 /* NMapsMap-xcframeworks.sh */,
+				AD1BF748EF84DB938313BB32235541E0 /* NMapsMap.debug.xcconfig */,
+				80355F1CED4E57C8FC1EF01B5918935E /* NMapsMap.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/NMapsMap";
 			sourceTree = "<group>";
 		};
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
@@ -198,12 +288,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DC955F600E602E5041F1000DC79753BB /* Frameworks */ = {
+		DB2662BF97EEAAC14AFE06B3B46B5EC6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				485FAE6318CCD7779377C7AA4A7B3528 /* NMapsGeometry.xcframework */,
+				69DFAAF49B060402EE05037C4D098CDB /* Pods-JMT */,
+				319D06AA0D1D0BA345459C039040A1ED /* SideMenu */,
 			);
-			name = Frameworks;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		E9283C7043AE4C6BBEE0F50168BA2DA2 /* Targets Support Files */ = {
@@ -214,42 +305,72 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		F0691F5BBCE50538CA33423BED86B5B5 /* Products */ = {
+		FA4817C27A3733DCD15187DDCAD89279 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				69DFAAF49B060402EE05037C4D098CDB /* Pods-JMT */,
+				BC2DE21B67AD1AA2270FF90FF96B4E1C /* NMapsGeometry-xcframeworks.sh */,
+				C6C0DBDF6BC4092AAE9CEEEAD18FCF70 /* NMapsGeometry.debug.xcconfig */,
+				4DD77E22045634112ADA8A18E2CBA1E1 /* NMapsGeometry.release.xcconfig */,
 			);
-			name = Products;
+			name = "Support Files";
+			path = "../Target Support Files/NMapsGeometry";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		E054EB075FF983196217C434CB48E9DE /* Headers */ = {
+		808B3C78170DE39A17382B38756CAA06 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				536D4900D555395B948435B69293A6BC /* Pods-JMT-umbrella.h in Headers */,
+				E56EEF71CC5AF0DA40228F2CA67B4BA0 /* SideMenu-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86B5D9B4B777A6D281CDAD1F14BAE459 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD5E62E8CC73923E270CDA40B070B38C /* Pods-JMT-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		C711881C468AB1C90F122AE823F92253 /* Pods-JMT */ = {
+		C4A0A7D8591B67FB75E2E8D215E3735B /* SideMenu */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FB4917968C37750E84EAFDED40199452 /* Build configuration list for PBXNativeTarget "Pods-JMT" */;
+			buildConfigurationList = C4E63BB43B7167D15C142EB405422643 /* Build configuration list for PBXNativeTarget "SideMenu" */;
 			buildPhases = (
-				E054EB075FF983196217C434CB48E9DE /* Headers */,
-				5D1383E95E4722A3097CA1D5B0653C9A /* Sources */,
-				1A2442F52107D53E1981BA102126F1DA /* Frameworks */,
-				2F21F45B6DCA6070BF9C219131F33134 /* Resources */,
+				808B3C78170DE39A17382B38756CAA06 /* Headers */,
+				67D65F22C5D7053A68ADB3533240B850 /* Sources */,
+				5DC25AA7986F2BF0AC82E6132A31A66D /* Frameworks */,
+				C35CA0EF3E2BEED48FF33721BDC0D000 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B8E1806423DB0C73222D604C000CE42C /* PBXTargetDependency */,
-				B5BAC117FF0FAAD3169B81E0762E5818 /* PBXTargetDependency */,
+			);
+			name = SideMenu;
+			productName = SideMenu;
+			productReference = 319D06AA0D1D0BA345459C039040A1ED /* SideMenu */;
+			productType = "com.apple.product-type.framework";
+		};
+		C711881C468AB1C90F122AE823F92253 /* Pods-JMT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E43751AB3D6EBC087E8403040631CAA /* Build configuration list for PBXNativeTarget "Pods-JMT" */;
+			buildPhases = (
+				86B5D9B4B777A6D281CDAD1F14BAE459 /* Headers */,
+				B80953D23B510EA4108C296F8A511C36 /* Sources */,
+				10035CE6DB88CB1173C091AE0C714129 /* Frameworks */,
+				57D8A76AC995E726FABBBA6E83A99D10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8C615E3583EDAB457118BE0541786DA1 /* PBXTargetDependency */,
+				A0B49CB69B93DC969E8768A52AC1D9D7 /* PBXTargetDependency */,
+				87806A471ECE7FB5F01EB7992F6CFCC4 /* PBXTargetDependency */,
 			);
 			name = "Pods-JMT";
 			productName = Pods_JMT;
@@ -274,19 +395,27 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = F0691F5BBCE50538CA33423BED86B5B5 /* Products */;
+			productRefGroup = DB2662BF97EEAAC14AFE06B3B46B5EC6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				72E614C823EA09AB1AAE80D5CD8A4C58 /* NMapsGeometry */,
 				8E049F5F4E3BDC647F924FEF22D49D90 /* NMapsMap */,
 				C711881C468AB1C90F122AE823F92253 /* Pods-JMT */,
+				C4A0A7D8591B67FB75E2E8D215E3735B /* SideMenu */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2F21F45B6DCA6070BF9C219131F33134 /* Resources */ = {
+		57D8A76AC995E726FABBBA6E83A99D10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C35CA0EF3E2BEED48FF33721BDC0D000 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -333,41 +462,69 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		5D1383E95E4722A3097CA1D5B0653C9A /* Sources */ = {
+		67D65F22C5D7053A68ADB3533240B850 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BC4ED641D93F7F3F0665DC4362D2583 /* Pods-JMT-dummy.m in Sources */,
+				D3BE0026C39E4B360BBDA0D5C57DD25D /* Deprecations.swift in Sources */,
+				F28D439429A375B6D4FCD037ED317CD6 /* Extensions.swift in Sources */,
+				74106BDED4B8B2281DFE4BE5E109D847 /* Initializable.swift in Sources */,
+				BE79F903F87E7D5918C6414E6203743E /* Print.swift in Sources */,
+				DAD5950A205347FCDBD3751604472431 /* Protected.swift in Sources */,
+				1F0DDBBAF86A028D6D60A7E10B4D3634 /* SideMenu-dummy.m in Sources */,
+				B804587E525773FCA9698855B2C752DC /* SideMenuAnimationController.swift in Sources */,
+				E97C7A323474D0205E872AE7BC773650 /* SideMenuInteractionController.swift in Sources */,
+				E709C98B763E8065628D8E88715E0BF8 /* SideMenuManager.swift in Sources */,
+				9E9F19E0120EA3C46967C28E637F52C8 /* SideMenuNavigationController.swift in Sources */,
+				057B453F4AE14D10EA77D38FA1A0B8FB /* SideMenuPresentationController.swift in Sources */,
+				5587C359D9C8789950E7F6585C2292E7 /* SideMenuPresentationStyle.swift in Sources */,
+				E72252B09CC270B50217CA6AEABD620A /* SideMenuPushCoordinator.swift in Sources */,
+				3817F4830A10E51D20B72530EF6A56D2 /* SideMenuTransitionController.swift in Sources */,
+				BC9C2E663681EDDBFE985034DCC7AAAF /* UITableViewVibrantCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B80953D23B510EA4108C296F8A511C36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B668826B497F88C270C817CE5AFF89D8 /* Pods-JMT-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		258F097AFE79EE06421A954BF7063DC2 /* PBXTargetDependency */ = {
+		6FE0EF37638A9B07349DCAEA124B8F3A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = NMapsGeometry;
 			target = 72E614C823EA09AB1AAE80D5CD8A4C58 /* NMapsGeometry */;
-			targetProxy = 7F00C360A1E47BCFA7970B4BBEC51126 /* PBXContainerItemProxy */;
+			targetProxy = 466629F9F4E4C3715B9DB64659080839 /* PBXContainerItemProxy */;
 		};
-		B5BAC117FF0FAAD3169B81E0762E5818 /* PBXTargetDependency */ = {
+		87806A471ECE7FB5F01EB7992F6CFCC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SideMenu;
+			target = C4A0A7D8591B67FB75E2E8D215E3735B /* SideMenu */;
+			targetProxy = 7B716D57B3324E26CE2BCE11D33F0F27 /* PBXContainerItemProxy */;
+		};
+		8C615E3583EDAB457118BE0541786DA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NMapsGeometry;
+			target = 72E614C823EA09AB1AAE80D5CD8A4C58 /* NMapsGeometry */;
+			targetProxy = 704D9660E449988764664DC03712DCCF /* PBXContainerItemProxy */;
+		};
+		A0B49CB69B93DC969E8768A52AC1D9D7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = NMapsMap;
 			target = 8E049F5F4E3BDC647F924FEF22D49D90 /* NMapsMap */;
-			targetProxy = 73DEE8CBDAEFE5A76D0CF7E27239F721 /* PBXContainerItemProxy */;
-		};
-		B8E1806423DB0C73222D604C000CE42C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = NMapsGeometry;
-			target = 72E614C823EA09AB1AAE80D5CD8A4C58 /* NMapsGeometry */;
-			targetProxy = DDEA547DC5337F97D5ACBCE50F68D8F4 /* PBXContainerItemProxy */;
+			targetProxy = 9D969877DE14FA1DBDBAE37BDFD5C8E3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		138EE7F5840AEF4E4028CA5FAAE9EE6E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F89040B8DC7FC773592AA5FE110E9DF /* NMapsGeometry.release.xcconfig */;
+			baseConfigurationReference = 4DD77E22045634112ADA8A18E2CBA1E1 /* NMapsGeometry.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -384,7 +541,7 @@
 		};
 		4122D12474652D4B94029A59C0DC6010 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A326C79B1B897CBCFDC36BFF5174A43 /* NMapsGeometry.debug.xcconfig */;
+			baseConfigurationReference = C6C0DBDF6BC4092AAE9CEEEAD18FCF70 /* NMapsGeometry.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -464,11 +621,10 @@
 			};
 			name = Debug;
 		};
-		4E94FFB6540BF4BDB34B5A7E357E170A /* Debug */ = {
+		46BFE2312ECDC35BEC02D94DC5B60F4C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A13F3CBF87A7BE9F32E393D58066C4C /* Pods-JMT.debug.xcconfig */;
+			baseConfigurationReference = 563B7636287E6CC8555DD6E218D50598 /* SideMenu.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -478,28 +634,28 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-JMT/Pods-JMT-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SideMenu/SideMenu-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SideMenu/SideMenu-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JMT/Pods-JMT.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/SideMenu/SideMenu.modulemap";
+				PRODUCT_MODULE_NAME = SideMenu;
+				PRODUCT_NAME = SideMenu;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		5D47E2EFAC6FAC81A782D9BFD8736F53 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -563,23 +719,7 @@
 			};
 			name = Release;
 		};
-		E683018BA3CA2E27A39E5DF5619B90F6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0970046F7060534BA9B286629593DA0C /* NMapsMap.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		EB66779EAA1D8DD6A2EA2B8299D87C9E /* Release */ = {
+		8C94478C49295588E5BB382A1A5C3E75 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 884CD1EC8D4B79A2DC03593D35ED64CB /* Pods-JMT.release.xcconfig */;
 			buildSettings = {
@@ -617,9 +757,97 @@
 			};
 			name = Release;
 		};
+		9E0C37648D76E361234D07CA876D0358 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C79742CDF8FD7D4B59C10E643A507FEF /* SideMenu.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SideMenu/SideMenu-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SideMenu/SideMenu-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SideMenu/SideMenu.modulemap";
+				PRODUCT_MODULE_NAME = SideMenu;
+				PRODUCT_NAME = SideMenu;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C0160F4E64988FA669467FD5C42BDF78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A13F3CBF87A7BE9F32E393D58066C4C /* Pods-JMT.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JMT/Pods-JMT-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JMT/Pods-JMT.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E683018BA3CA2E27A39E5DF5619B90F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD1BF748EF84DB938313BB32235541E0 /* NMapsMap.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		FE5D137BA104CCBECE001BF38C0AEB3E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 53BB18D8DE6118DEC0AAC01027DBECA8 /* NMapsMap.release.xcconfig */;
+			baseConfigurationReference = 80355F1CED4E57C8FC1EF01B5918935E /* NMapsMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -646,6 +874,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		5E43751AB3D6EBC087E8403040631CAA /* Build configuration list for PBXNativeTarget "Pods-JMT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0160F4E64988FA669467FD5C42BDF78 /* Debug */,
+				8C94478C49295588E5BB382A1A5C3E75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		73E737D5F21341C24A13EBC70CD8D471 /* Build configuration list for PBXAggregateTarget "NMapsMap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -655,20 +892,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		C4E63BB43B7167D15C142EB405422643 /* Build configuration list for PBXNativeTarget "SideMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E0C37648D76E361234D07CA876D0358 /* Debug */,
+				46BFE2312ECDC35BEC02D94DC5B60F4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EB98AD101AB530610FAEE48FABDF7F57 /* Build configuration list for PBXAggregateTarget "NMapsGeometry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4122D12474652D4B94029A59C0DC6010 /* Debug */,
 				138EE7F5840AEF4E4028CA5FAAE9EE6E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FB4917968C37750E84EAFDED40199452 /* Build configuration list for PBXNativeTarget "Pods-JMT" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4E94FFB6540BF4BDB34B5A7E357E170A /* Debug */,
-				EB66779EAA1D8DD6A2EA2B8299D87C9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -6,6 +6,7 @@ target 'JMT' do
   use_frameworks!
 
   pod 'NMapsMap'
+  pod 'SideMenu'
 
   # Pods for JMT
 
