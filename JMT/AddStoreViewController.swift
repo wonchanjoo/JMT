@@ -14,6 +14,7 @@ class AddStoreViewController: UIViewController {
     @IBOutlet weak var mapView: NMFMapView!
     @IBOutlet weak var storeTableView: UITableView!
     var items: [Item]?
+    var markers: [NMFMarker?]!
 }
 
 extension AddStoreViewController {
@@ -41,32 +42,84 @@ extension AddStoreViewController {
             if let result = response.value {
                 self.items = result.items // 장소 저장
                 self.storeTableView.reloadData()
-                self.showMakers()
+                self.showMarkers()
             }
         }
         
     }
     
     // items 저장된 가게들의 마커 표시
-    func showMakers() {
-        var lastPosition: NMGLatLng!
+    func showMarkers() {
+        removeMarkers() // 전에 있던 마커 삭제
+    
+        var latLngArray: [NMGLatLng?] = Array(repeating: nil, count: items!.count) // 마커의 좌표 배열
+        markers = Array(repeating: nil, count: items!.count) // 마커 배열
         
         // 마커 생성해서 표시
         guard let items = self.items else { return }
-        for item in items {
-            let position = NMGTm128(x: Double(item.mapx)!, y: Double(item.mapy)!).toLatLng()
-            lastPosition = position
+        for i in 0..<items.count {
+            let item = items[i]
             
+            let position = NMGTm128(x: Double(item.mapx)!, y: Double(item.mapy)!).toLatLng() // 가게의 좌표
+            latLngArray[i] = position // 좌표 저장
+            
+            // 마커 생성
             let marker = NMFMarker(position: position)
             marker.iconImage = NMF_MARKER_IMAGE_BLUE
+            marker.width = 20
+            marker.height = 25
             marker.captionText = item.title.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
-            marker.mapView = mapView // 마커 표시
+            marker.mapView = mapView // 마커 지도에 표시
+            
+            markers![i] = marker // 마커 저장
         }
         
-        // 지도 위치를 items의 마지막 가게의 위치로 업데이트
-        var updateCamera = NMFCameraUpdate(scrollTo: lastPosition)
-        updateCamera.animation = .easeOut
+        // 지도 위치 업데이트
+        var bounds = NMGLatLngBounds(southWest: findSouthwest(latLngArray), northEast: findNorthEast(latLngArray))
+        var updateCamera = NMFCameraUpdate(fit: bounds, padding: CGFloat(80))
+        updateCamera.animation = .fly
         mapView.moveCamera(updateCamera)
+    }
+    
+    // 전에 표시한 마커들 삭제
+    func removeMarkers() {
+        guard let markers = self.markers else { return }
+        for marker in markers {
+            marker!.mapView = nil
+        }
+    }
+    
+    // 가장 북서쪽 좌표
+    func findSouthwest(_ latLngArray: [NMGLatLng?]) -> (NMGLatLng) {
+        var southWest = latLngArray.first!
+        
+        for coordinate in latLngArray {
+            if coordinate!.lat < southWest!.lat {
+                southWest = coordinate
+            }
+            
+            if coordinate!.lng < southWest!.lng {
+                southWest = coordinate
+            }
+        }
+        
+        return southWest!
+    }
+    
+    // 가장 동남쪽 좌표
+    func findNorthEast(_ latLngArray: [NMGLatLng?]) -> (NMGLatLng) {
+        var northEast = latLngArray.first!
+        
+        for coordinate in latLngArray {
+            if coordinate!.lat > northEast!.lat {
+                northEast = coordinate
+            }
+            if coordinate!.lng > northEast!.lng {
+                northEast = coordinate
+            }
+        }
+        
+        return northEast!
     }
 }
 
