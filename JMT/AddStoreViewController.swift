@@ -70,6 +70,17 @@ extension AddStoreViewController {
             marker.width = 20
             marker.height = 25
             marker.captionText = item.title.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+            marker.captionRequestedWidth = 10
+            marker.touchHandler = { (overlay: NMFOverlay) -> Bool in
+                // link가 존재하면 WebViewController로 이동
+                if item.link != "" {
+                    print("link = \(item.link)")
+                    let webViewController = self.storyboard?.instantiateViewController(withIdentifier: "Web") as! WebViewController
+                    webViewController.link = item.link
+                    self.navigationController?.pushViewController(webViewController, animated: true)
+                }
+                return true
+            }
             marker.mapView = mapView // 마커 지도에 표시
             
             markers![i] = marker // 마커 저장
@@ -154,23 +165,11 @@ extension AddStoreViewController: UITableViewDataSource {
     }
 }
 
-extension AddStoreViewController: UITableViewDelegate {
-    
-}
-
 extension AddStoreViewController {
     @objc func titleClick(_ gesture: UITapGestureRecognizer) {
         let tapLocation = gesture.location(in: storeTableView)
         if let tappedIndexPath = storeTableView.indexPathForRow(at: tapLocation) {
             let item = items![tappedIndexPath.row]
-            
-            // link가 존재하면 WebViewController로 이동
-            if item.link != "" {
-                print("link = \(item.link)")
-                let webViewController = storyboard?.instantiateViewController(withIdentifier: "Web") as! WebViewController
-                webViewController.link = item.link
-                navigationController?.pushViewController(webViewController, animated: true)
-            }
             
             // 지도 이동
             var updateCamera = NMFCameraUpdate(scrollTo: latLngArray[tappedIndexPath.row]!)
