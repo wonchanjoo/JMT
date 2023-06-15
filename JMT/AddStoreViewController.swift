@@ -15,6 +15,7 @@ class AddStoreViewController: UIViewController {
     @IBOutlet weak var storeTableView: UITableView!
     var items: [Item]?
     var markers: [NMFMarker?]!
+    var latLngArray: [NMGLatLng?]!
 }
 
 extension AddStoreViewController {
@@ -52,7 +53,7 @@ extension AddStoreViewController {
     func showMarkers() {
         removeMarkers() // 전에 있던 마커 삭제
     
-        var latLngArray: [NMGLatLng?] = Array(repeating: nil, count: items!.count) // 마커의 좌표 배열
+        latLngArray = Array(repeating: nil, count: items!.count) // 마커의 좌표 배열
         markers = Array(repeating: nil, count: items!.count) // 마커 배열
         
         // 마커 생성해서 표시
@@ -161,12 +162,20 @@ extension AddStoreViewController {
     @objc func titleClick(_ gesture: UITapGestureRecognizer) {
         let tapLocation = gesture.location(in: storeTableView)
         if let tappedIndexPath = storeTableView.indexPathForRow(at: tapLocation) {
-            print("link = \(items![tappedIndexPath.row].link)")
-            if items![tappedIndexPath.row].link != "" && items![tappedIndexPath.row].link != nil {
+            let item = items![tappedIndexPath.row]
+            
+            // link가 존재하면 WebViewController로 이동
+            if item.link != "" {
+                print("link = \(item.link)")
                 let webViewController = storyboard?.instantiateViewController(withIdentifier: "Web") as! WebViewController
-                webViewController.link = items![tappedIndexPath.row].link
+                webViewController.link = item.link
                 navigationController?.pushViewController(webViewController, animated: true)
             }
+            
+            // 지도 이동
+            var updateCamera = NMFCameraUpdate(scrollTo: latLngArray[tappedIndexPath.row]!)
+            updateCamera.animation = .easeIn
+            mapView.moveCamera(updateCamera)
         }
     }
 }
