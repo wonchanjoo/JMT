@@ -136,8 +136,18 @@ extension AddStoreViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StoreTableViewCell")!
         let item = items![indexPath.row]
         
-        (cell.contentView.subviews[0] as! UILabel).text = item.title.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
-        (cell.contentView.subviews[1] as! UILabel).text = item.category
+        let titleLabel = (cell.contentView.subviews[0] as! UILabel)
+        let categoryLabel = (cell.contentView.subviews[1] as! UILabel)
+        let addressLabel = (cell.contentView.subviews[2] as! UILabel)
+        let addButton = (cell.contentView.subviews[3] as! UIButton)
+        
+        titleLabel.text = item.title.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        titleLabel.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(titleClick(_:)))
+        titleLabel.addGestureRecognizer(tapGesture)
+        
+        categoryLabel.text = item.category
+        addressLabel.text = item.address
         
         return cell
     }
@@ -145,4 +155,18 @@ extension AddStoreViewController: UITableViewDataSource {
 
 extension AddStoreViewController: UITableViewDelegate {
     
+}
+
+extension AddStoreViewController {
+    @objc func titleClick(_ gesture: UITapGestureRecognizer) {
+        let tapLocation = gesture.location(in: storeTableView)
+        if let tappedIndexPath = storeTableView.indexPathForRow(at: tapLocation) {
+            print("link = \(items![tappedIndexPath.row].link)")
+            if items![tappedIndexPath.row].link != "" && items![tappedIndexPath.row].link != nil {
+                let webViewController = storyboard?.instantiateViewController(withIdentifier: "Web") as! WebViewController
+                webViewController.link = items![tappedIndexPath.row].link
+                navigationController?.pushViewController(webViewController, animated: true)
+            }
+        }
+    }
 }

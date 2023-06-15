@@ -28,6 +28,7 @@
 		56FBA4742A397DC8005FDC11 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FBA4732A397DC8005FDC11 /* SideMenuViewController.swift */; };
 		56FBA4762A3980E9005FDC11 /* AddStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FBA4752A3980E9005FDC11 /* AddStoreViewController.swift */; };
 		56FBA4782A399EC4005FDC11 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FBA4772A399EC4005FDC11 /* SearchResult.swift */; };
+		56FBA47C2A3B3787005FDC11 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FBA47B2A3B3787005FDC11 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		56FBA4732A397DC8005FDC11 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		56FBA4752A3980E9005FDC11 /* AddStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreViewController.swift; sourceTree = "<group>"; };
 		56FBA4772A399EC4005FDC11 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		56FBA47B2A3B3787005FDC11 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		D386CB43F0702BBF3E3C620B /* Pods-JMT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMT.release.xcconfig"; path = "Target Support Files/Pods-JMT/Pods-JMT.release.xcconfig"; sourceTree = "<group>"; };
 		EE1C6397F023A59228BB5B71 /* Pods-JMT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMT.debug.xcconfig"; path = "Target Support Files/Pods-JMT/Pods-JMT.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 				56FBA4732A397DC8005FDC11 /* SideMenuViewController.swift */,
 				56FBA4752A3980E9005FDC11 /* AddStoreViewController.swift */,
 				56FBA4772A399EC4005FDC11 /* SearchResult.swift */,
+				56FBA47B2A3B3787005FDC11 /* WebViewController.swift */,
 			);
 			path = JMT;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				56250A372A3053C100F80B87 /* GroupCodeViewController.swift in Sources */,
 				56250A352A304E1100F80B87 /* Database.swift in Sources */,
 				56FBA4702A38CEC4005FDC11 /* MainViewController.swift in Sources */,
+				56FBA47C2A3B3787005FDC11 /* WebViewController.swift in Sources */,
 				56CA9AD72A28500C006FF32B /* SceneDelegate.swift in Sources */,
 				56F53AA92A30DC1A00220679 /* User.swift in Sources */,
 			);
