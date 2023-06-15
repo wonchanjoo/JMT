@@ -8,7 +8,6 @@ target 'JMT' do
   pod 'NMapsMap'
   pod 'SideMenu'
   pod 'Alamofire'
-  pod 'SwiftyJSON'
 
   # Pods for JMT
 
