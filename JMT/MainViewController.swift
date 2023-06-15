@@ -16,3 +16,11 @@ class MainViewController: UIViewController {
         view.addSubview(mapView)
     }
 }
+
+extension MainViewController {
+    @IBAction func addStore(_ sender: UIBarButtonItem) {
+        let addStoreViewController = storyboard?.instantiateViewController(withIdentifier: "AddStore") as! AddStoreViewController
+        
+        navigationController?.pushViewController(addStoreViewController, animated: true)
+    }
+}

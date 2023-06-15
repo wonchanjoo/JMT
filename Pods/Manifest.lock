@@ -1,24 +1,32 @@
 PODS:
+  - Alamofire (5.7.1)
   - NMapsGeometry (1.0.1)
   - NMapsMap (3.16.2):
     - NMapsGeometry
   - SideMenu (6.5.0)
+  - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
+  - Alamofire
   - NMapsMap
   - SideMenu
+  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - NMapsGeometry
     - NMapsMap
     - SideMenu
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
   NMapsGeometry: 53c573ead66466681cf123f99f698dc8071a4b83
   NMapsMap: aaa64717249b06ae82c3a3addb3a01f0e33100ab
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: af330b70a3ac2c590358db769b8091c6e12bb96f
+PODFILE CHECKSUM: 2cc1f3faddb3b57cee6656442aa9ba2b24092172
 
 COCOAPODS: 1.12.0

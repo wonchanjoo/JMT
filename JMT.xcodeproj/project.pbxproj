@@ -25,6 +25,9 @@
 		56F53AAB2A341AD200220679 /* CreateGroupCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F53AAA2A341AD200220679 /* CreateGroupCodeViewController.swift */; };
 		56FBA4702A38CEC4005FDC11 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FBA46F2A38CEC4005FDC11 /* MainViewController.swift */; };
 		56FBA4722A38D8B5005FDC11 /* SideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FBA4712A38D8B5005FDC11 /* SideMenuNavigationController.swift */; };
+		56FBA4742A397DC8005FDC11 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FBA4732A397DC8005FDC11 /* SideMenuViewController.swift */; };
+		56FBA4762A3980E9005FDC11 /* AddStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FBA4752A3980E9005FDC11 /* AddStoreViewController.swift */; };
+		56FBA4782A399EC4005FDC11 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FBA4772A399EC4005FDC11 /* SearchResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		56F53AAA2A341AD200220679 /* CreateGroupCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupCodeViewController.swift; sourceTree = "<group>"; };
 		56FBA46F2A38CEC4005FDC11 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		56FBA4712A38D8B5005FDC11 /* SideMenuNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuNavigationController.swift; sourceTree = "<group>"; };
+		56FBA4732A397DC8005FDC11 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		56FBA4752A3980E9005FDC11 /* AddStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreViewController.swift; sourceTree = "<group>"; };
+		56FBA4772A399EC4005FDC11 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		D386CB43F0702BBF3E3C620B /* Pods-JMT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMT.release.xcconfig"; path = "Target Support Files/Pods-JMT/Pods-JMT.release.xcconfig"; sourceTree = "<group>"; };
 		EE1C6397F023A59228BB5B71 /* Pods-JMT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMT.debug.xcconfig"; path = "Target Support Files/Pods-JMT/Pods-JMT.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +115,9 @@
 				56F53AAA2A341AD200220679 /* CreateGroupCodeViewController.swift */,
 				56FBA46F2A38CEC4005FDC11 /* MainViewController.swift */,
 				56FBA4712A38D8B5005FDC11 /* SideMenuNavigationController.swift */,
+				56FBA4732A397DC8005FDC11 /* SideMenuViewController.swift */,
+				56FBA4752A3980E9005FDC11 /* AddStoreViewController.swift */,
+				56FBA4772A399EC4005FDC11 /* SearchResult.swift */,
 			);
 			path = JMT;
 			sourceTree = "<group>";
@@ -254,11 +263,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56FBA4762A3980E9005FDC11 /* AddStoreViewController.swift in Sources */,
 				56F53AA72A30D9A300220679 /* SignUpViewController.swift in Sources */,
 				56F53AAB2A341AD200220679 /* CreateGroupCodeViewController.swift in Sources */,
 				56CA9AD92A28500C006FF32B /* StartViewController.swift in Sources */,
 				56FBA4722A38D8B5005FDC11 /* SideMenuNavigationController.swift in Sources */,
+				56FBA4742A397DC8005FDC11 /* SideMenuViewController.swift in Sources */,
 				56CA9AD52A28500C006FF32B /* AppDelegate.swift in Sources */,
+				56FBA4782A399EC4005FDC11 /* SearchResult.swift in Sources */,
 				56250A372A3053C100F80B87 /* GroupCodeViewController.swift in Sources */,
 				56250A352A304E1100F80B87 /* Database.swift in Sources */,
 				56FBA4702A38CEC4005FDC11 /* MainViewController.swift in Sources */,
