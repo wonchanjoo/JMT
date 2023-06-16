@@ -47,8 +47,10 @@ extension StartViewController {
                     self.database.haveGroupCode(nickname: nickname!) { haveGroup in
                         if haveGroup { // 그룹 코드가 이미 있는 경우
                             let mainViewController = self.storyboard?.instantiateViewController(withIdentifier: "Main") as! MainViewController
-                            
-                            self.navigationController?.pushViewController(mainViewController, animated: true)
+                            self.database.getGroupCode(nickname: nickname!) { groupCode in
+                                mainViewController.groupCode = groupCode
+                                self.navigationController?.pushViewController(mainViewController, animated: true)
+                            }
                         } else { // 그룹 코드가 없는 경우
                             let groupCodeViewController = self.storyboard?.instantiateViewController(withIdentifier: "GroupCode") as! GroupCodeViewController
                             groupCodeViewController.nickname = nickname

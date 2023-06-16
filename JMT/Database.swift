@@ -50,6 +50,17 @@ extension Database {
             }
         }
     }
+    
+    func getGroupCode(nickname: String, completion: @escaping (String) -> Void) {
+        let ref = db.collection("User").document(nickname)
+        ref.getDocument{ (document, error) in
+            if let groupCode = document?.data()?["group_code"] {
+                completion(groupCode as! String)
+            } else {
+                completion("")
+            }
+        }
+    }
 }
 
 // 그룹
@@ -87,3 +98,39 @@ extension Database {
 }
 
 // 가게
+extension Database {
+    func saveStore(groupCode: String, item: Item) {
+        var dict: [String: Any?] = [:]
+        dict["title"] = item.title.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        dict["link"] = item.link
+        dict["category"] = item.category
+        dict["description"] = item.description
+        dict["telephone"] = item.telephone
+        dict["address"] = item.address
+        dict["roadAddress"] = item.roadAddress
+        dict["mapx"] = item.mapx
+        dict["mapy"] = item.mapy
+        
+        db.collection("Store").document(item.title.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)).setData(["group_code": groupCode, "data": dict])
+    }
+    
+    func getStoreList(groupCode: String, completion: @escaping ([Any]?, Error?) -> Void) {
+        let collectionRef = db.collection("Store")
+        let query = collectionRef.whereField("group_code", isEqualTo: groupCode)
+        
+        query.getDocuments { (snapshot, error) in
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+            
+            guard let snapshot = snapshot else {
+                completion(nil, nil)
+                return
+            }
+            
+            let dataArray = snapshot.documents.compactMap { $0.data()["data"] }
+            completion(dataArray, nil)
+        }
+    }
+}

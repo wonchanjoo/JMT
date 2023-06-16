@@ -13,9 +13,11 @@ class AddStoreViewController: UIViewController {
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var mapView: NMFMapView!
     @IBOutlet weak var storeTableView: UITableView!
+    var database = Database()
+    var groupCode: String!
     var items: [Item]?
-    var markers: [NMFMarker?]!
-    var latLngArray: [NMGLatLng?]!
+    var markers: [NMFMarker?]! // 화면에 있는 마커들 저장
+    var latLngArray: [NMGLatLng?]! // 화면에 있는 마커들의 위치 저장
 }
 
 extension AddStoreViewController {
@@ -155,18 +157,21 @@ extension AddStoreViewController: UITableViewDataSource {
         
         titleLabel.text = item.title.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
         titleLabel.isUserInteractionEnabled = true
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(titleClick(_:)))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(moveMarker(_:)))
         titleLabel.addGestureRecognizer(tapGesture)
         
         categoryLabel.text = item.category
         addressLabel.text = item.address
+        
+        let clickButtonGesture = UITapGestureRecognizer(target: self, action: #selector(addStore(_:)))
+        addButton.addGestureRecognizer(clickButtonGesture)
         
         return cell
     }
 }
 
 extension AddStoreViewController {
-    @objc func titleClick(_ gesture: UITapGestureRecognizer) {
+    @objc func moveMarker(_ gesture: UITapGestureRecognizer) {
         let tapLocation = gesture.location(in: storeTableView)
         if let tappedIndexPath = storeTableView.indexPathForRow(at: tapLocation) {
             let item = items![tappedIndexPath.row]
@@ -175,6 +180,14 @@ extension AddStoreViewController {
             var updateCamera = NMFCameraUpdate(scrollTo: latLngArray[tappedIndexPath.row]!)
             updateCamera.animation = .easeIn
             mapView.moveCamera(updateCamera)
+        }
+    }
+    
+    @objc func addStore(_ gesture: UITapGestureRecognizer) {
+        let tapLocation = gesture.location(in: storeTableView)
+        if let tappedIndexPath = storeTableView.indexPathForRow(at: tapLocation) {
+            let item = items![tappedIndexPath.row]
+            database.saveStore(groupCode: groupCode, item: item)
         }
     }
 }
