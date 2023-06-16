@@ -19,6 +19,8 @@ extension MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        groupCode = UserDefaults.standard.object(forKey: "groupCode") as! String
+        
         // mapView 추가
         mapView = NMFMapView(frame: view.frame)
         view.addSubview(mapView)
@@ -26,7 +28,7 @@ extension MainViewController {
         // 데이터베이스에 저장된 store들의 마커 찍기
         database.getStoreList(groupCode: groupCode) { dataArray, error in
             if let error = error {
-                print("Error: \(error)")
+                print("getStoreList Error: \(error)")
                 return
             }
             
@@ -47,15 +49,15 @@ extension MainViewController {
 }
 
 extension MainViewController {
+    // AddStoreViewController로 이동
     @IBAction func addStore(_ sender: UIBarButtonItem) {
         let addStoreViewController = storyboard?.instantiateViewController(withIdentifier: "AddStore") as! AddStoreViewController
-        addStoreViewController.groupCode = self.groupCode
-        
         navigationController?.pushViewController(addStoreViewController, animated: true)
     }
 }
 
 extension MainViewController {
+    // 전달된 딕셔너리의 좌표 정보를 가지고 mapView에 marker 생성
     func showMarker(dict: [String: Any]) {
         let title = dict["title"] as? String
         let mapx = (dict["mapx"] as? String)!

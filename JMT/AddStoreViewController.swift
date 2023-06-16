@@ -25,6 +25,7 @@ extension AddStoreViewController {
         super.viewDidLoad()
         
         storeTableView.dataSource = self
+        groupCode = UserDefaults.standard.object(forKey: "groupCode") as! String
     }
 }
 
@@ -147,7 +148,7 @@ extension AddStoreViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "StoreTableViewCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AddStoreTableViewCell")!
         let item = items![indexPath.row]
         
         let titleLabel = (cell.contentView.subviews[0] as! UILabel)

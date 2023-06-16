@@ -20,6 +20,7 @@ extension GroupCodeViewController {
     override func viewDidLoad() {
         logoImageView.image = UIImage(named: "JMT_logo.png")
         errorMessage.isHidden = true
+        nickname = UserDefaults.standard.object(forKey: "nickname") as! String
     }
 }
 
@@ -47,11 +48,14 @@ extension GroupCodeViewController {
                     print("Error: \(error.localizedDescription)")
                 } else if let groupList = groupList {
                     let documentExists = groupList.contains { $0.documentID == groupCode }
-                    if documentExists {
+                    if documentExists { // 그룹 코드가 존재하는 경우
+                        // UserDefaults에 그룹 코드만 저장
+                        UserDefaults.standard.set(groupCode, forKey: "groupCode")
+                        
                         let mainViewController = self.storyboard?.instantiateViewController(withIdentifier: "Main") as! MainViewController
                         
                         self.present(mainViewController, animated: true, completion: nil)
-                    } else {
+                    } else { // 그룹 코드가 존재하지 않는 경우
                         self.errorMessage.text = "존재하지 않는 그룹 코드입니다"
                         self.errorMessage.isEnabled = false
                     }

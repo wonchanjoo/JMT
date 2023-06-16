@@ -36,7 +36,6 @@ extension StartViewController {
     @IBAction func login(_ sender: UIButton) {
         let nickname = nicknameField.text
         let password = passwordField.text
-        print("nickname = \(nickname), password = \(password)")
         
         if nickname == "" || password == "" {
             errorMessage.text = "올바른 값을 입력하세요"
@@ -47,13 +46,20 @@ extension StartViewController {
                     self.database.haveGroupCode(nickname: nickname!) { haveGroup in
                         if haveGroup { // 그룹 코드가 이미 있는 경우
                             let mainViewController = self.storyboard?.instantiateViewController(withIdentifier: "Main") as! MainViewController
+                            
                             self.database.getGroupCode(nickname: nickname!) { groupCode in
-                                mainViewController.groupCode = groupCode
+                                // UserDefaults로 닉네임과 그룹 코드 저장
+                                UserDefaults.standard.set(groupCode, forKey: "groupCode")
+                                UserDefaults.standard.set(nickname, forKey: "nickname")
+                                
                                 self.navigationController?.pushViewController(mainViewController, animated: true)
                             }
                         } else { // 그룹 코드가 없는 경우
+                            // UserDefaults로 닉네임만 저장
+                            UserDefaults.standard.set(nickname, forKey: "nickname")
+                            
                             let groupCodeViewController = self.storyboard?.instantiateViewController(withIdentifier: "GroupCode") as! GroupCodeViewController
-                            groupCodeViewController.nickname = nickname
+                            
                             self.navigationController?.pushViewController(groupCodeViewController, animated: true)
                         }
                     }
