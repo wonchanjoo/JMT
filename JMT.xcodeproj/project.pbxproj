@@ -30,6 +30,11 @@
 		56FBA4782A399EC4005FDC11 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FBA4772A399EC4005FDC11 /* SearchResult.swift */; };
 		56FBA47C2A3B3787005FDC11 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FBA47B2A3B3787005FDC11 /* WebViewController.swift */; };
 		56FBA47E2A3C99F5005FDC11 /* StoreListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FBA47D2A3C99F5005FDC11 /* StoreListViewController.swift */; };
+		56FBA4802A3CB5BD005FDC11 /* fork-and-knife.png in Resources */ = {isa = PBXBuildFile; fileRef = 56FBA47F2A3CB5BD005FDC11 /* fork-and-knife.png */; };
+		56FBA4852A3CB715005FDC11 /* sushi.png in Resources */ = {isa = PBXBuildFile; fileRef = 56FBA4812A3CB714005FDC11 /* sushi.png */; };
+		56FBA4862A3CB715005FDC11 /* spaghetti.png in Resources */ = {isa = PBXBuildFile; fileRef = 56FBA4822A3CB715005FDC11 /* spaghetti.png */; };
+		56FBA4872A3CB715005FDC11 /* hot-beverage.png in Resources */ = {isa = PBXBuildFile; fileRef = 56FBA4832A3CB715005FDC11 /* hot-beverage.png */; };
+		56FBA4882A3CB715005FDC11 /* taco.png in Resources */ = {isa = PBXBuildFile; fileRef = 56FBA4842A3CB715005FDC11 /* taco.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +61,11 @@
 		56FBA4772A399EC4005FDC11 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		56FBA47B2A3B3787005FDC11 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		56FBA47D2A3C99F5005FDC11 /* StoreListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListViewController.swift; sourceTree = "<group>"; };
+		56FBA47F2A3CB5BD005FDC11 /* fork-and-knife.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fork-and-knife.png"; sourceTree = "<group>"; };
+		56FBA4812A3CB714005FDC11 /* sushi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sushi.png; sourceTree = "<group>"; };
+		56FBA4822A3CB715005FDC11 /* spaghetti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaghetti.png; sourceTree = "<group>"; };
+		56FBA4832A3CB715005FDC11 /* hot-beverage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hot-beverage.png"; sourceTree = "<group>"; };
+		56FBA4842A3CB715005FDC11 /* taco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taco.png; sourceTree = "<group>"; };
 		D386CB43F0702BBF3E3C620B /* Pods-JMT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMT.release.xcconfig"; path = "Target Support Files/Pods-JMT/Pods-JMT.release.xcconfig"; sourceTree = "<group>"; };
 		EE1C6397F023A59228BB5B71 /* Pods-JMT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMT.debug.xcconfig"; path = "Target Support Files/Pods-JMT/Pods-JMT.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +88,11 @@
 			isa = PBXGroup;
 			children = (
 				567217EC2A2C358B004AAF91 /* JMT_logo.png */,
+				56FBA47F2A3CB5BD005FDC11 /* fork-and-knife.png */,
+				56FBA4832A3CB715005FDC11 /* hot-beverage.png */,
+				56FBA4822A3CB715005FDC11 /* spaghetti.png */,
+				56FBA4812A3CB714005FDC11 /* sushi.png */,
+				56FBA4842A3CB715005FDC11 /* taco.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -213,8 +228,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				56CA9AE12A28500D006FF32B /* LaunchScreen.storyboard in Resources */,
+				56FBA4862A3CB715005FDC11 /* spaghetti.png in Resources */,
+				56FBA4802A3CB5BD005FDC11 /* fork-and-knife.png in Resources */,
+				56FBA4872A3CB715005FDC11 /* hot-beverage.png in Resources */,
 				5621704A2A2ACC870007A621 /* GoogleService-Info.plist in Resources */,
 				56CA9ADE2A28500D006FF32B /* Assets.xcassets in Resources */,
+				56FBA4882A3CB715005FDC11 /* taco.png in Resources */,
+				56FBA4852A3CB715005FDC11 /* sushi.png in Resources */,
 				567217ED2A2C358B004AAF91 /* JMT_logo.png in Resources */,
 				56CA9ADC2A28500C006FF32B /* Main.storyboard in Resources */,
 			);

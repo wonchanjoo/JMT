@@ -58,6 +58,7 @@ extension StoreListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StoreTableViewCell")!
         let storeDict = storeList[indexPath.row]
         
+        let imageView = (cell.contentView.subviews[0] as! UIImageView)
         let titleLabel = (cell.contentView.subviews[1] as! UILabel)
         let categoryLabel = (cell.contentView.subviews[2] as! UILabel)
         let addressLabel = (cell.contentView.subviews[3] as! UILabel)
@@ -65,6 +66,20 @@ extension StoreListViewController: UITableViewDataSource {
         titleLabel.text = storeDict!["title"] as? String
         categoryLabel.text = storeDict!["category"] as? String
         addressLabel.text = storeDict!["address"] as? String
+        
+        if let categoryText = categoryLabel.text {
+            if categoryText.contains("멕시코") {
+                imageView.image = UIImage(named: "taco.png")
+            } else if categoryText.contains("일식") {
+                imageView.image = UIImage(named: "sushi.png")
+            } else if categoryText.contains("카페") {
+                imageView.image = UIImage(named: "hot-beverage.png")
+            } else if categoryText.contains("양식") {
+                imageView.image = UIImage(named: "spaghetti.png")
+            } else {
+                imageView.image = UIImage(named: "fork-and-knife.png")
+            }
+        }
         
         return cell
     }
