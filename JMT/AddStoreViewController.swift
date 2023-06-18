@@ -184,10 +184,18 @@ extension AddStoreViewController {
     }
     
     @objc func addStore(_ gesture: UITapGestureRecognizer) {
-        let tapLocation = gesture.location(in: storeTableView)
-        if let tappedIndexPath = storeTableView.indexPathForRow(at: tapLocation) {
-            let item = items![tappedIndexPath.row]
-            database.saveStore(groupCode: groupCode, item: item)
+        let commentDialog = storyboard?.instantiateViewController(withIdentifier: "Comment") as! CommentViewController
+        
+        // 선택된 가게의 정보 가져오기
+        let tapLocation = gesture.location(in: self.storeTableView)
+        if let tappedIndexPath = self.storeTableView.indexPathForRow(at: tapLocation) {
+            let item = self.items![tappedIndexPath.row]
+            commentDialog.store = item
         }
+        
+        commentDialog.modalPresentationStyle = .overCurrentContext
+        commentDialog.modalTransitionStyle = .crossDissolve
+        
+        present(commentDialog, animated: true, completion: nil)
     }
 }

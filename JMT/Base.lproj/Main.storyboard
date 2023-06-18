@@ -353,15 +353,15 @@
                                 <rect key="frame" x="10" y="69" width="373" height="700"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1Ik-5x-JmA">
-                                        <rect key="frame" x="0.0" y="0.0" width="373" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="373" height="34.333333333333336"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="장소를 검색해보세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oX3-mG-XBt">
-                                                <rect key="frame" x="0.0" y="0.0" width="309.33333333333331" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="309.33333333333331" height="34.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktb-Of-8hH">
-                                                <rect key="frame" x="319.33333333333331" y="0.0" width="53.666666666666686" height="34"/>
+                                                <rect key="frame" x="319.33333333333331" y="0.0" width="53.666666666666686" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="검색"/>
                                                 <connections>
@@ -371,7 +371,7 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3lP-3B-w2g" customClass="NMFMapView">
-                                        <rect key="frame" x="0.0" y="44" width="373" height="380"/>
+                                        <rect key="frame" x="0.0" y="44.333333333333343" width="373" height="379.66666666666663"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9Ml-BI-Qrd">
@@ -509,7 +509,7 @@
         <!--Comment View Controller-->
         <scene sceneID="JKp-cf-1z0">
             <objects>
-                <viewController id="SN5-7k-ONT" customClass="CommentViewController" customModule="JMT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Comment" id="SN5-7k-ONT" customClass="CommentViewController" customModule="JMT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="23y-kf-aLa">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -526,11 +526,17 @@
                                         <rect key="frame" x="186" y="115" width="54" height="35"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="확인"/>
+                                        <connections>
+                                            <action selector="addComment:" destination="SN5-7k-ONT" eventType="touchUpInside" id="7oJ-80-oxm"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2IY-8R-YNj">
                                         <rect key="frame" x="60" y="115" width="54" height="35"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="취소"/>
+                                        <connections>
+                                            <action selector="cancel:" destination="SN5-7k-ONT" eventType="touchUpInside" id="FA1-IT-OBV"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -554,6 +560,9 @@
                             <constraint firstItem="X2R-G8-ESZ" firstAttribute="centerX" secondItem="23y-kf-aLa" secondAttribute="centerX" id="vjF-jo-bMD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="commentField" destination="2Fq-kJ-9N5" id="G9D-AE-6te"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nob-Fb-wZ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

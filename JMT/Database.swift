@@ -99,7 +99,7 @@ extension Database {
 
 // 가게
 extension Database {
-    func saveStore(groupCode: String, item: Item) {
+    func saveStore(groupCode: String, item: Item, nickname: String, content: String) {
         var dict: [String: Any?] = [:]
         dict["title"] = item.title.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
         dict["link"] = item.link
@@ -111,7 +111,9 @@ extension Database {
         dict["mapx"] = item.mapx
         dict["mapy"] = item.mapy
         
-        db.collection("Store").document(item.title.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)).setData(["group_code": groupCode, "data": dict])
+        var comment: [String] = ["\(nickname):\(content)"]
+        
+        db.collection("Store").document(item.title.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)).setData(["group_code": groupCode, "data": dict, "comment": comment])
     }
     
     func getStoreList(groupCode: String, completion: @escaping ([Any]?, Error?) -> Void) {
