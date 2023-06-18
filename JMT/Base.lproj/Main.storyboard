@@ -506,6 +506,59 @@
             </objects>
             <point key="canvasLocation" x="1711" y="1996"/>
         </scene>
+        <!--Comment View Controller-->
+        <scene sceneID="JKp-cf-1z0">
+            <objects>
+                <viewController id="SN5-7k-ONT" customClass="CommentViewController" customModule="JMT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="23y-kf-aLa">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X2R-G8-ESZ">
+                                <rect key="frame" x="46.666666666666657" y="336" width="300" height="180"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="한 줄 평을 남겨보세요!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Fq-kJ-9N5">
+                                        <rect key="frame" x="10" y="30" width="280" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8L-WO-TUb">
+                                        <rect key="frame" x="186" y="115" width="54" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="확인"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2IY-8R-YNj">
+                                        <rect key="frame" x="60" y="115" width="54" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="취소"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="2Fq-kJ-9N5" firstAttribute="top" secondItem="X2R-G8-ESZ" secondAttribute="top" constant="30" id="0aA-7R-iVR"/>
+                                    <constraint firstAttribute="bottom" secondItem="z8L-WO-TUb" secondAttribute="bottom" constant="30" id="F6E-gs-bKX"/>
+                                    <constraint firstAttribute="width" constant="300" id="KQE-uL-SIm"/>
+                                    <constraint firstAttribute="bottom" secondItem="2IY-8R-YNj" secondAttribute="bottom" constant="30" id="O4h-v4-69H"/>
+                                    <constraint firstAttribute="height" constant="180" id="QUj-CI-he2"/>
+                                    <constraint firstAttribute="trailing" secondItem="z8L-WO-TUb" secondAttribute="trailing" constant="60" id="jKy-Cf-74j"/>
+                                    <constraint firstItem="2IY-8R-YNj" firstAttribute="leading" secondItem="X2R-G8-ESZ" secondAttribute="leading" constant="60" id="rpO-ZD-J7E"/>
+                                    <constraint firstItem="2Fq-kJ-9N5" firstAttribute="leading" secondItem="X2R-G8-ESZ" secondAttribute="leading" constant="10" id="x2b-wa-cuB"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Fq-kJ-9N5" secondAttribute="trailing" constant="10" id="xLr-Jn-9Pv"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yfJ-cq-6QH"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.70115894039735094" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="X2R-G8-ESZ" firstAttribute="centerY" secondItem="23y-kf-aLa" secondAttribute="centerY" id="kBZ-7z-y0t"/>
+                            <constraint firstItem="X2R-G8-ESZ" firstAttribute="centerX" secondItem="23y-kf-aLa" secondAttribute="centerX" id="vjF-jo-bMD"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nob-Fb-wZ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2407" y="1996"/>
+        </scene>
         <!--Store List View Controller-->
         <scene sceneID="f6X-rR-XqH">
             <objects>

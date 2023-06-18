@@ -16,6 +16,7 @@
 		567217ED2A2C358B004AAF91 /* JMT_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 567217EC2A2C358B004AAF91 /* JMT_logo.png */; };
 		56B909652A3F1A74000C8934 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B909642A3F1A74000C8934 /* SettingViewController.swift */; };
 		56B909672A3F1C98000C8934 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B909662A3F1C98000C8934 /* StoreViewController.swift */; };
+		56B909692A3F63FB000C8934 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B909682A3F63FB000C8934 /* CommentViewController.swift */; };
 		56CA9AD52A28500C006FF32B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CA9AD42A28500C006FF32B /* AppDelegate.swift */; };
 		56CA9AD72A28500C006FF32B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CA9AD62A28500C006FF32B /* SceneDelegate.swift */; };
 		56CA9AD92A28500C006FF32B /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CA9AD82A28500C006FF32B /* StartViewController.swift */; };
@@ -45,6 +46,7 @@
 		567217EC2A2C358B004AAF91 /* JMT_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JMT_logo.png; sourceTree = "<group>"; };
 		56B909642A3F1A74000C8934 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		56B909662A3F1C98000C8934 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		56B909682A3F63FB000C8934 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		56CA9AD12A28500C006FF32B /* JMT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CA9AD42A28500C006FF32B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56CA9AD62A28500C006FF32B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				56FBA47D2A3C99F5005FDC11 /* StoreListViewController.swift */,
 				56B909642A3F1A74000C8934 /* SettingViewController.swift */,
 				56B909662A3F1C98000C8934 /* StoreViewController.swift */,
+				56B909682A3F63FB000C8934 /* CommentViewController.swift */,
 			);
 			path = JMT;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				56B909672A3F1C98000C8934 /* StoreViewController.swift in Sources */,
 				56B909652A3F1A74000C8934 /* SettingViewController.swift in Sources */,
 				56CA9AD52A28500C006FF32B /* AppDelegate.swift in Sources */,
+				56B909692A3F63FB000C8934 /* CommentViewController.swift in Sources */,
 				56FBA4782A399EC4005FDC11 /* SearchResult.swift in Sources */,
 				56250A372A3053C100F80B87 /* GroupCodeViewController.swift in Sources */,
 				56250A352A304E1100F80B87 /* Database.swift in Sources */,
