@@ -49,7 +49,6 @@ extension AddStoreViewController {
                 self.showMarkers()
             }
         }
-        
     }
     
     // items 저장된 가게들의 마커 표시

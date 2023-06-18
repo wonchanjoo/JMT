@@ -133,4 +133,16 @@ extension Database {
             completion(dataArray, nil)
         }
     }
+    
+    func getStoreInfo(title: String, completion: @escaping ([String: Any?]?) -> Void) {
+        let ref = db.collection("Store").document(title)
+        ref.getDocument { (document, error) in
+            if let data = document?.data()?["data"] {
+                completion(data as! [String: Any?])
+            } else {
+                completion(nil)
+            }
+            
+        }
+    }
 }

@@ -21,8 +21,6 @@ extension MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //showListButton.layer.zPosition = 1
-        
         groupCode = UserDefaults.standard.object(forKey: "groupCode") as! String
         
         // 데이터베이스에 저장된 store들의 마커 찍기
@@ -50,8 +48,8 @@ extension MainViewController {
 
 extension MainViewController {
     @IBAction func showStoreList(_ sender: UIButton) {
-        print("버튼 클릭")
         let storeListViewController = storyboard?.instantiateViewController(withIdentifier: "StoreList") as! StoreListViewController
+        
         storeListViewController.modalPresentationStyle = .fullScreen
         
         presentPanModal(storeListViewController)
