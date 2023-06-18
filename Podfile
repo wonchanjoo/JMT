@@ -5,10 +5,10 @@ target 'JMT' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
+  # Pods for JMT
   pod 'NMapsMap'
   pod 'SideMenu'
   pod 'Alamofire'
-
-  # Pods for JMT
+  pod 'PanModal'
 
 end

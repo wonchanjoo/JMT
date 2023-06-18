@@ -7,23 +7,23 @@
 
 import UIKit
 import NMapsMap
+import PanModal
 
 class MainViewController: UIViewController {
     var groupCode: String!
     var database = Database()
     var makers: [NMFMarker?]! // 화면에 있는 마커들 저장
-    var mapView: NMFMapView!
+    @IBOutlet weak var mapView: NMFMapView!
+    @IBOutlet weak var showListButton: UIButton!
 }
 
 extension MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        groupCode = UserDefaults.standard.object(forKey: "groupCode") as! String
+        //showListButton.layer.zPosition = 1
         
-        // mapView 추가
-        mapView = NMFMapView(frame: view.frame)
-        view.addSubview(mapView)
+        groupCode = UserDefaults.standard.object(forKey: "groupCode") as! String
         
         // 데이터베이스에 저장된 store들의 마커 찍기
         database.getStoreList(groupCode: groupCode) { dataArray, error in
@@ -49,10 +49,12 @@ extension MainViewController {
 }
 
 extension MainViewController {
-    // AddStoreViewController로 이동
-    @IBAction func addStore(_ sender: UIBarButtonItem) {
-        let addStoreViewController = storyboard?.instantiateViewController(withIdentifier: "AddStore") as! AddStoreViewController
-        navigationController?.pushViewController(addStoreViewController, animated: true)
+    @IBAction func showStoreList(_ sender: UIButton) {
+        print("버튼 클릭")
+        let storeListViewController = storyboard?.instantiateViewController(withIdentifier: "StoreList") as! StoreListViewController
+        storeListViewController.modalPresentationStyle = .fullScreen
+        
+        presentPanModal(storeListViewController)
     }
 }
 

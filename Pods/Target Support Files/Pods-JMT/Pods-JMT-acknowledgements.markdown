@@ -36,9 +36,9 @@ Copyright © 2018 NAVER Corp.
 All rights reserved.
 
 
-## SideMenu
+## PanModal
 
-Copyright (c) 2015 Jonathan Kent <contact@jonkent.me>
+Copyright © 2018 Tiny Speck, Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -59,11 +59,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-## SwiftyJSON
+## SideMenu
 
-The MIT License (MIT)
-
-Copyright (c) 2017 Ruoyu Fu
+Copyright (c) 2015 Jonathan Kent <contact@jonkent.me>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

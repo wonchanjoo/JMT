@@ -45,14 +45,15 @@ extension StartViewController {
                 if valid { // 로그인 성공
                     self.database.haveGroupCode(nickname: nickname!) { haveGroup in
                         if haveGroup { // 그룹 코드가 이미 있는 경우
-                            let mainViewController = self.storyboard?.instantiateViewController(withIdentifier: "Main") as! MainViewController
+                            let tabBarController = self.storyboard?.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+                            tabBarController.modalPresentationStyle = .fullScreen
                             
                             self.database.getGroupCode(nickname: nickname!) { groupCode in
                                 // UserDefaults로 닉네임과 그룹 코드 저장
                                 UserDefaults.standard.set(groupCode, forKey: "groupCode")
                                 UserDefaults.standard.set(nickname, forKey: "nickname")
-                                
-                                self.navigationController?.pushViewController(mainViewController, animated: true)
+
+                                self.present(tabBarController, animated: true, completion: nil)
                             }
                         } else { // 그룹 코드가 없는 경우
                             // UserDefaults로 닉네임만 저장

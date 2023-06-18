@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PanModal
 
 class StoreListViewController: UIViewController {
     @IBOutlet weak var storeTableView: UITableView!
@@ -82,5 +83,19 @@ extension StoreListViewController: UITableViewDataSource {
         }
         
         return cell
+    }
+}
+
+extension StoreListViewController: PanModalPresentable {
+    var panScrollable: UIScrollView? {
+        nil
+    }
+    
+    var shortFormHeight: PanModalHeight {
+        .contentHeight(UIScreen.main.bounds.height * 0.4)
+    }
+    
+    var longFormHeight: PanModalHeight {
+        return .maxHeightWithTopInset(0)
     }
 }
