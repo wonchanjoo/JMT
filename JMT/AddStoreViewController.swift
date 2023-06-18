@@ -80,7 +80,7 @@ extension AddStoreViewController {
                     print("link = \(item.link)")
                     let webViewController = self.storyboard?.instantiateViewController(withIdentifier: "Web") as! WebViewController
                     webViewController.link = item.link
-                    self.navigationController?.pushViewController(webViewController, animated: true)
+                    self.present(webViewController, animated: true, completion: nil)
                 }
                 return true
             }
