@@ -60,8 +60,9 @@ extension StartViewController {
                             UserDefaults.standard.set(nickname, forKey: "nickname")
                             
                             let groupCodeViewController = self.storyboard?.instantiateViewController(withIdentifier: "GroupCode") as! GroupCodeViewController
+                            groupCodeViewController.modalPresentationStyle = .fullScreen
                             
-                            self.navigationController?.pushViewController(groupCodeViewController, animated: true)
+                            self.present(groupCodeViewController, animated: true)
                         }
                     }
                 } else { // 로그인 실패

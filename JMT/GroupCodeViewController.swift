@@ -52,7 +52,11 @@ extension GroupCodeViewController {
                         // UserDefaults에 그룹 코드만 저장
                         UserDefaults.standard.set(groupCode, forKey: "groupCode")
                         
+                        // Group에 user 추가
+                        self.database.addGroupUser(code: groupCode!, nickname: UserDefaults.standard.object(forKey: "nickname") as! String)
+                        
                         let mainViewController = self.storyboard?.instantiateViewController(withIdentifier: "Main") as! MainViewController
+                        mainViewController.modalPresentationStyle = .fullScreen
                         
                         self.present(mainViewController, animated: true, completion: nil)
                     } else { // 그룹 코드가 존재하지 않는 경우

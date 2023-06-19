@@ -25,15 +25,10 @@ extension SignUpViewController {
         
         if nickname != "" && password != "" {
             let user = User(nickname: nickname, password: password)
-            print("nickname = \(nickname), password = \(password)")
             database.saveUser(user: user)
             dismiss(animated: true)
         } else {
             errorMessage.layer.isHidden = false
         }
     }
-}
-
-extension SignUpViewController {
-
 }

@@ -8,16 +8,23 @@
 import Foundation
 import FirebaseCore
 import FirebaseFirestore
+import FirebaseStorage
 
 class Database {
     let db = Firestore.firestore()
+    let storage = Storage.storage()
 }
+
 
 // user
 extension Database {
     func saveUser(user: User) {
+        // fire store에 user 정보 저장
         let data = try? NSKeyedArchiver.archivedData(withRootObject: user, requiringSecureCoding: false)
         db.collection("User").document(user.nickname).setData(["data": data as Any])
+        
+        // storage에 user 기본 이미지 저장
+        uploadImage(img: UIImage(systemName: "person.fill")!, nickname: user.nickname)
     }
     
     func validUser(nickname: String, password: String, completion: @escaping (Bool) -> Void) {
@@ -63,6 +70,7 @@ extension Database {
     }
 }
 
+
 // 그룹
 extension Database {
     // 새로운 그룹 저장
@@ -98,6 +106,7 @@ extension Database {
         }
     }
 }
+
 
 // 가게
 extension Database {
@@ -173,6 +182,26 @@ extension Database {
                 comments.append("\(nickname):\(content)") // add new comment
                 self.db.collection("Store").document(title).updateData(["comment": comments]) // DB에 저장
                 completion(nil)
+            }
+        }
+    }
+}
+
+
+// 이미지
+extension Database {
+    func uploadImage(img: UIImage, nickname: String) {
+        var data = Data()
+        data = img.jpegData(compressionQuality: 0.8)!
+        
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/png"
+        
+        storage.reference().child(nickname).putData(data, metadata: metaData) { (metaData, error) in
+            if let error = error {
+                return
+            } else {
+                
             }
         }
     }

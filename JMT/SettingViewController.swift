@@ -8,5 +8,11 @@
 import UIKit
 
 class SettingViewController: UIViewController {
-    
+    @IBOutlet weak var userImage: UIImageView!
+}
+
+extension SettingViewController {
+    override func viewDidLoad() {
+        userImage.image = UIImage(systemName: "person.fill")
+    }
 }
