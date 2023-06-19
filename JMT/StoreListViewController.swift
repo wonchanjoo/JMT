@@ -105,11 +105,14 @@ extension StoreListViewController {
         let storeDict = storeList[indexPath.row]
         let title = storeDict?["title"] as! String
         
-        // 데이터베이스에서 가져온 store 정보 StoreViewController에 저장 후 전환
-        database.getStoreInfo(title: title) { storeInfo in
+        // 데이터베이스에서 가져온 store 정보와 comment StoreViewController에 저장 후 전환
+        database.getStoreInfo(title: title) { (storeInfo, comments) in
             let storeViewController = self.storyboard?.instantiateViewController(withIdentifier: "Store") as! StoreViewController
+            
             storeViewController.modalPresentationStyle = .fullScreen
             storeViewController.storeInfo = storeInfo
+            storeViewController.comments = comments
+            
             self.present(storeViewController, animated: true, completion: nil)
         }
     }

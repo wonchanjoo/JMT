@@ -65,10 +65,12 @@ extension Database {
 
 // 그룹
 extension Database {
+    // 새로운 그룹 저장
     func saveGroupCode(code: String, name: String) {
         db.collection("Group").document(code).setData(["name": name])
     }
     
+    // 그룹에 user 추가
     func addGroupUser(code: String, nickname: String) {
         db.collection("User").document(nickname).updateData(["group_code": code])
         db.collection("Group").document(code).getDocument { (document, error) in
@@ -80,6 +82,7 @@ extension Database {
         }
     }
     
+    // 모든 그룹 이름 반환
     func getGroupList(completion: @escaping ([QueryDocumentSnapshot]?, Error?) -> Void) {
         db.collection("Group").getDocuments { (querySnapshot, error) in
             if let error = error {
@@ -87,7 +90,6 @@ extension Database {
                 completion(nil, error)
             } else {
                 guard let groupList = querySnapshot?.documents else {
-                    print("GroupList가 존재하지 않습니다.")
                     completion(nil, nil)
                     return
                 }
@@ -99,6 +101,7 @@ extension Database {
 
 // 가게
 extension Database {
+    // 새로운 가게 저장
     func saveStore(groupCode: String, item: Item, nickname: String, content: String) {
         var dict: [String: Any?] = [:]
         dict["title"] = item.title.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
@@ -116,6 +119,7 @@ extension Database {
         db.collection("Store").document(item.title.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)).setData(["group_code": groupCode, "data": dict, "comment": comment])
     }
     
+    // 모든 가게 반환
     func getStoreList(groupCode: String, completion: @escaping ([Any]?, Error?) -> Void) {
         let collectionRef = db.collection("Store")
         let query = collectionRef.whereField("group_code", isEqualTo: groupCode)
@@ -136,15 +140,40 @@ extension Database {
         }
     }
     
-    func getStoreInfo(title: String, completion: @escaping ([String: Any?]?) -> Void) {
+    // title 가게의 정보 반환(title, category, address 등..)
+    func getStoreInfo(title: String, completion: @escaping ([String: Any?]?, [String]?) -> Void) {
         let ref = db.collection("Store").document(title)
         ref.getDocument { (document, error) in
-            if let data = document?.data()?["data"] {
-                completion(data as! [String: Any?])
+            if let data = document?.data()?["data"], let comment = document?.data()?["comment"] {
+                completion(data as? [String: Any?], comment as? [String])
+            } else {
+                completion(nil, nil)
+            }
+            
+        }
+    }
+    
+    // title 가게의 코멘트 배열 가져오기
+    func getComments(title: String, completion: @escaping ([String]?) -> Void) {
+        let ref = db.collection("Store").document(title)
+        ref.getDocument { (document, error) in
+            if let comments = document?.data()?["comment"] {
+                completion(comments as! [String])
             } else {
                 completion(nil)
             }
-            
+        }
+    }
+    
+    // title 가게에 코멘트 추가
+    func addComment(title: String, nickname: String, content: String, completion: @escaping (Error?) -> Void) {
+        db.collection("Store").document(title).getDocument { (document, error) in
+            if let document = document, document.exists {
+                var comments = document.data()?["comment"] as? [String] ?? []
+                comments.append("\(nickname):\(content)") // add new comment
+                self.db.collection("Store").document(title).updateData(["comment": comments]) // DB에 저장
+                completion(nil)
+            }
         }
     }
 }
