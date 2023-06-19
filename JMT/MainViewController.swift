@@ -22,7 +22,9 @@ extension MainViewController {
         super.viewDidLoad()
         
         groupCode = UserDefaults.standard.object(forKey: "groupCode") as! String
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         // 데이터베이스에 저장된 store들의 마커 찍기
         database.getStoreList(groupCode: groupCode) { dataArray, error in
             if let error = error {

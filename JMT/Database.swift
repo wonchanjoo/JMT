@@ -205,4 +205,15 @@ extension Database {
             }
         }
     }
+    
+    func downloadImage(nickname: String, completion: @escaping (UIImage?) -> Void) {
+        storage.reference(forURL: "gs://jmt-ios-d463c.appspot.com/\(nickname)").getData(maxSize: Int64(1 * 1024 * 1024)) { data, error in
+            guard let imgData = data else {
+                completion(nil)
+                return
+            }
+            completion(UIImage(data: imgData))
+        }
+    }
+
 }

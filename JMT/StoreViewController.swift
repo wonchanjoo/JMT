@@ -87,8 +87,15 @@ extension StoreViewController: UITableViewDataSource {
         let comment = comments![indexPath.row]
         let components = comment.components(separatedBy: ":")
         
-        let nicknameLabel = (cell.contentView.subviews[0] as! UILabel)
-        let contentLabel = (cell.contentView.subviews[1] as! UILabel)
+        let userImage = (cell.contentView.subviews[0] as! UIImageView)
+        let nicknameLabel = (cell.contentView.subviews[1] as! UILabel)
+        let contentLabel = (cell.contentView.subviews[2] as! UILabel)
+        
+        userImage.layer.cornerRadius = userImage.frame.size.width / 2
+        userImage.clipsToBounds = true
+        database.downloadImage(nickname: components[0]) { img in
+            userImage.image = img
+        }
         
         nicknameLabel.text = components[0]
         contentLabel.text = components[1]

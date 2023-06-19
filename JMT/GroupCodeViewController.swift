@@ -55,10 +55,10 @@ extension GroupCodeViewController {
                         // Group에 user 추가
                         self.database.addGroupUser(code: groupCode!, nickname: UserDefaults.standard.object(forKey: "nickname") as! String)
                         
-                        let mainViewController = self.storyboard?.instantiateViewController(withIdentifier: "Main") as! MainViewController
-                        mainViewController.modalPresentationStyle = .fullScreen
+                        let tabBarController = self.storyboard?.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+                        tabBarController.modalPresentationStyle = .fullScreen
                         
-                        self.present(mainViewController, animated: true, completion: nil)
+                        self.present(tabBarController, animated: true, completion: nil)
                     } else { // 그룹 코드가 존재하지 않는 경우
                         self.errorMessage.text = "존재하지 않는 그룹 코드입니다"
                         self.errorMessage.isEnabled = false

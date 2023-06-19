@@ -28,7 +28,6 @@ extension CreateGroupCodeViewController {
             let groupCode = UIDevice.current.identifierForVendor?.uuidString // group code 생성
             
             database.saveGroupCode(code: groupCode!, name: groupNameField.text!) // DB에 groupcode 저장
-            database.addGroupUser(code: groupCode!, nickname: nickname)
             
             UIPasteboard.general.string = groupCode // 클립보드에 복사
             copyGroupCode()
