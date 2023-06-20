@@ -13,6 +13,8 @@ class AddStoreViewController: UIViewController {
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var mapView: NMFMapView!
     @IBOutlet weak var storeTableView: UITableView!
+    @IBOutlet weak var searchButton: UIButton!
+    
     var database = Database()
     var groupCode: String!
     var items: [Item]?
@@ -25,6 +27,16 @@ extension AddStoreViewController {
         super.viewDidLoad()
         
         storeTableView.dataSource = self
+        storeTableView.layer.cornerRadius = 10
+        storeTableView.layer.shadowColor = UIColor.gray.cgColor
+        storeTableView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        storeTableView.layer.shadowOpacity = 0.5
+        storeTableView.layer.shadowRadius = 4.0
+        storeTableView.layer.masksToBounds = false
+        
+        searchButton.tintColor = UIColor(red: 0.478, green: 0.376, blue: 0.878, alpha: 1.0)
+        searchButton.layer.cornerRadius = 10
+        
         groupCode = UserDefaults.standard.object(forKey: "groupCode") as! String
     }
 }
@@ -73,6 +85,7 @@ extension AddStoreViewController {
             marker.height = 25
             marker.captionText = item.title.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
             marker.captionRequestedWidth = 10
+            marker.iconTintColor = UIColor.purple
             marker.touchHandler = { (overlay: NMFOverlay) -> Bool in
                 // link가 존재하면 WebViewController로 이동
                 if item.link != "" {
@@ -89,10 +102,11 @@ extension AddStoreViewController {
         }
         
         // 지도 위치 업데이트
-        var bounds = NMGLatLngBounds(southWest: findSouthwest(latLngArray), northEast: findNorthEast(latLngArray))
-        var updateCamera = NMFCameraUpdate(fit: bounds, padding: CGFloat(80))
-        updateCamera.animation = .fly
-        mapView.moveCamera(updateCamera)
+        if let latLng = latLngArray[0] {
+            var updateCamera = NMFCameraUpdate(scrollTo: latLng)
+            updateCamera.animation = .fly
+            mapView.moveCamera(updateCamera)
+        }
     }
     
     // 전에 표시한 마커들 삭제
@@ -101,39 +115,6 @@ extension AddStoreViewController {
         for marker in markers {
             marker!.mapView = nil
         }
-    }
-    
-    // 가장 북서쪽 좌표
-    func findSouthwest(_ latLngArray: [NMGLatLng?]) -> (NMGLatLng) {
-        var southWest = latLngArray.first!
-        
-        for coordinate in latLngArray {
-            if coordinate!.lat < southWest!.lat {
-                southWest = coordinate
-            }
-            
-            if coordinate!.lng < southWest!.lng {
-                southWest = coordinate
-            }
-        }
-        
-        return southWest!
-    }
-    
-    // 가장 동남쪽 좌표
-    func findNorthEast(_ latLngArray: [NMGLatLng?]) -> (NMGLatLng) {
-        var northEast = latLngArray.first!
-        
-        for coordinate in latLngArray {
-            if coordinate!.lat > northEast!.lat {
-                northEast = coordinate
-            }
-            if coordinate!.lng > northEast!.lng {
-                northEast = coordinate
-            }
-        }
-        
-        return northEast!
     }
 }
 
@@ -165,6 +146,10 @@ extension AddStoreViewController: UITableViewDataSource {
         
         let clickButtonGesture = UITapGestureRecognizer(target: self, action: #selector(addStore(_:)))
         addButton.addGestureRecognizer(clickButtonGesture)
+        addButton.tintColor = UIColor(red: 0.478, green: 0.376, blue: 0.878, alpha: 1.0)
+        
+        if indexPath.row % 2 == 0 { // 홀수번째 cell은 배경을 회색으로
+            cell.backgroundColor = .systemGray6        }
         
         return cell
     }
@@ -193,9 +178,28 @@ extension AddStoreViewController {
             commentDialog.store = item
         }
         
+        commentDialog.showToast = showToast(message:font:)
         commentDialog.modalPresentationStyle = .overCurrentContext
         commentDialog.modalTransitionStyle = .crossDissolve
         
-        present(commentDialog, animated: true, completion: nil)
+        present(commentDialog, animated: true) 
+    }
+    
+    func showToast(message : String, font: UIFont) {
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = font
+        toastLabel.textAlignment = .center;
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+                toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
     }
 }

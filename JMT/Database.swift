@@ -111,7 +111,8 @@ extension Database {
 // 가게
 extension Database {
     // 새로운 가게 저장
-    func saveStore(groupCode: String, item: Item, nickname: String, content: String) {
+    func saveStore(groupCode: String, item: Item, images: [String], nickname: String, content: String) {
+        // 가게 정보
         var dict: [String: Any?] = [:]
         dict["title"] = item.title.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
         dict["link"] = item.link
@@ -123,9 +124,10 @@ extension Database {
         dict["mapx"] = item.mapx
         dict["mapy"] = item.mapy
         
+        // 코멘트
         var comment: [String] = ["\(nickname):\(content)"]
         
-        db.collection("Store").document(item.title.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)).setData(["group_code": groupCode, "data": dict, "comment": comment])
+        db.collection("Store").document(item.title.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)).setData(["group_code": groupCode, "data": dict, "comment": comment, "images": images])
     }
     
     // 모든 가게 반환
@@ -181,6 +183,18 @@ extension Database {
                 var comments = document.data()?["comment"] as? [String] ?? []
                 comments.append("\(nickname):\(content)") // add new comment
                 self.db.collection("Store").document(title).updateData(["comment": comments]) // DB에 저장
+                completion(nil)
+            }
+        }
+    }
+    
+    // title 가게의 이미지 배열 가져오기
+    func getImages(title: String, completion: @escaping ([String]?) -> Void) {
+        let ref = db.collection("Store").document(title)
+        ref.getDocument { (document, error) in
+            if let images = document?.data()?["images"] {
+                completion(images as! [String])
+            } else {
                 completion(nil)
             }
         }

@@ -6,13 +6,17 @@
 //
 
 import UIKit
+import NMapsMap
 import PanModal
+import Alamofire
+import Kingfisher
 
 class StoreListViewController: UIViewController {
     @IBOutlet weak var storeTableView: UITableView!
     var groupCode: String!
     var database = Database()
     var storeList: [[String: Any]?]!
+    var moveMap: ((NMGLatLng) -> Void)!
 }
 
 extension StoreListViewController {
@@ -43,6 +47,7 @@ extension StoreListViewController {
         }
         
         storeTableView.dataSource = self
+        storeTableView.delegate = self
     }
 }
 
@@ -68,6 +73,7 @@ extension StoreListViewController: UITableViewDataSource {
         titleLabel.text = storeDict!["title"] as? String
         categoryLabel.text = storeDict!["category"] as? String
         addressLabel.text = storeDict!["address"] as? String
+        infoButton.tintColor = UIColor(red: 0.478, green: 0.376, blue: 0.878, alpha: 1.0)
         
         if let categoryText = categoryLabel.text {
             if categoryText.contains("멕시코") {
@@ -87,6 +93,18 @@ extension StoreListViewController: UITableViewDataSource {
         infoButton.addGestureRecognizer(clickButtonGesture)
         
         return cell
+    }
+}
+
+extension StoreListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let store = storeList[indexPath.row]!
+        let mapx = (store["mapx"] as? String)!
+        let mapy = (store["mapy"] as? String)!
+        
+        let position = NMGTm128(x: Double(mapx)!, y: Double(mapy)!).toLatLng()
+
+        moveMap(position)
     }
 }
 
@@ -110,6 +128,7 @@ extension StoreListViewController {
             let storeViewController = self.storyboard?.instantiateViewController(withIdentifier: "Store") as! StoreViewController
             
             storeViewController.modalPresentationStyle = .fullScreen
+            storeViewController.modalTransitionStyle = .coverVertical
             storeViewController.storeInfo = storeInfo
             storeViewController.comments = comments
             

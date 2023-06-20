@@ -10,9 +10,10 @@ import UIKit
 class CreateGroupCodeViewController: UIViewController {
     @IBOutlet weak var groupNameField: UITextField!
     @IBOutlet weak var errorMessage: UILabel!
+    
     var nickname: String!
-    var copyGroupCode: (() -> Void)!
     var database = Database()
+    var showToast: ((String, UIFont) -> Void)!
 }
 
 
@@ -30,7 +31,7 @@ extension CreateGroupCodeViewController {
             database.saveGroupCode(code: groupCode!, name: groupNameField.text!) // DB에 groupcode 저장
             
             UIPasteboard.general.string = groupCode // 클립보드에 복사
-            copyGroupCode()
+            showToast("그룹 코드가 클립보드에 복사되었습니다", UIFont.systemFont(ofSize: 15))
             
             dismiss(animated: true)
         }

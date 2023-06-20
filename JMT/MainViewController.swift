@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     var groupCode: String!
     var database = Database()
     var makers: [NMFMarker?]! // 화면에 있는 마커들 저장
+    
     @IBOutlet weak var mapView: NMFMapView!
     @IBOutlet weak var showListButton: UIButton!
 }
@@ -20,6 +21,9 @@ class MainViewController: UIViewController {
 extension MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //showListButton.tintColor = .white
+        showListButton.tintColor = UIColor(red: 0.478, green: 0.376, blue: 0.878, alpha: 1.0)
         
         groupCode = UserDefaults.standard.object(forKey: "groupCode") as! String
     }
@@ -53,6 +57,7 @@ extension MainViewController {
         let storeListViewController = storyboard?.instantiateViewController(withIdentifier: "StoreList") as! StoreListViewController
         
         storeListViewController.modalPresentationStyle = .fullScreen
+        storeListViewController.moveMap = moveMap
         
         presentPanModal(storeListViewController)
     }
@@ -74,11 +79,16 @@ extension MainViewController {
         marker.height = 25
         marker.captionText = title!
         marker.captionRequestedWidth = 10
+        marker.iconTintColor = UIColor.purple
         marker.touchHandler = { (overlay: NMFOverlay) -> Bool in
             var updateCamera = NMFCameraUpdate(scrollTo: position)
             self.mapView.moveCamera(updateCamera)
             return true
         }
         marker.mapView = mapView
+    }
+    
+    func moveMap(position: NMGLatLng) {
+        mapView.moveCamera(NMFCameraUpdate(scrollTo: position, zoomTo: 15.0))
     }
 }

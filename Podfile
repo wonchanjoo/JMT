@@ -10,5 +10,7 @@ target 'JMT' do
   pod 'SideMenu'
   pod 'Alamofire'
   pod 'PanModal'
+  pod 'Kingfisher'
+  pod 'lottie-ios'
 
 end

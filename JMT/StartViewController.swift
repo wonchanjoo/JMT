@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import Lottie
 
 class StartViewController: UIViewController {
-    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var logoView: LottieAnimationView!
     @IBOutlet weak var nicknameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var errorMessage: UILabel!
@@ -17,7 +18,12 @@ class StartViewController: UIViewController {
 
 extension StartViewController {
     override func viewDidLoad() {
-        logoImageView.image = UIImage(named: "JMT_logo.png")
+        
+        logoView.contentMode = .scaleAspectFit
+        logoView.loopMode = .loop
+        logoView.animationSpeed = 0.5
+        logoView.play()
+        
         passwordField.isSecureTextEntry = true
         errorMessage.isHidden = true
     }
@@ -61,6 +67,7 @@ extension StartViewController {
                             
                             let groupCodeViewController = self.storyboard?.instantiateViewController(withIdentifier: "GroupCode") as! GroupCodeViewController
                             groupCodeViewController.modalPresentationStyle = .fullScreen
+                            groupCodeViewController.modalTransitionStyle = .coverVertical
                             
                             self.present(groupCodeViewController, animated: true)
                         }

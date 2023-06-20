@@ -31,8 +31,8 @@ extension GroupCodeViewController {
         createGroupCodeDialog.modalPresentationStyle = .overCurrentContext
         createGroupCodeDialog.modalTransitionStyle = .crossDissolve
         createGroupCodeDialog.nickname = self.nickname
+        createGroupCodeDialog.showToast = showToast(message:font:)
         
-        createGroupCodeDialog.copyGroupCode = copyGroupCode
         self.present(createGroupCodeDialog, animated: true, completion: nil)
     }
     
@@ -57,6 +57,7 @@ extension GroupCodeViewController {
                         
                         let tabBarController = self.storyboard?.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
                         tabBarController.modalPresentationStyle = .fullScreen
+                        tabBarController.modalTransitionStyle = .coverVertical
                         
                         self.present(tabBarController, animated: true, completion: nil)
                     } else { // 그룹 코드가 존재하지 않는 경우
@@ -71,7 +72,21 @@ extension GroupCodeViewController {
 }
 
 extension GroupCodeViewController {
-    func copyGroupCode() {
-        copyMessage.isHidden = false
+    func showToast(message : String, font: UIFont) {
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = font
+        toastLabel.textAlignment = .center;
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+                toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
     }
 }
