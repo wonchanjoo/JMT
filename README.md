@@ -3,4 +3,4 @@
 
 </br>
 
-<p align="center"><img width=300 src="https://github.com/wonchanjoo/JMT/assets/92321183/d4ba8760-1dc0-4bdc-b746-41898bb962ce.gif" /></p>
+<p align="center"><img width=300 src="https://github.com/wonchanjoo/JMT/assets/92321183/76f6eacb-b32b-437d-a1b6-7e43f519a166" /></p>
