@@ -12,6 +12,7 @@ class StartViewController: UIViewController {
     @IBOutlet weak var logoView: LottieAnimationView!
     @IBOutlet weak var nicknameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var errorMessage: UILabel!
     let database = Database()
 }
@@ -23,6 +24,8 @@ extension StartViewController {
         logoView.loopMode = .loop
         logoView.animationSpeed = 0.5
         logoView.play()
+        
+        loginButton.tintColor = UIColor(red: 0.478, green: 0.376, blue: 0.878, alpha: 1.0)
         
         passwordField.isSecureTextEntry = true
         errorMessage.isHidden = true
@@ -67,7 +70,6 @@ extension StartViewController {
                             
                             let groupCodeViewController = self.storyboard?.instantiateViewController(withIdentifier: "GroupCode") as! GroupCodeViewController
                             groupCodeViewController.modalPresentationStyle = .fullScreen
-                            groupCodeViewController.modalTransitionStyle = .coverVertical
                             
                             self.present(groupCodeViewController, animated: true)
                         }

@@ -105,6 +105,17 @@ extension Database {
             }
         }
     }
+    
+    func getGroupName(groupCode: String, completion: @escaping (String?) -> Void) {
+        let ref = db.collection("Group").document(groupCode)
+        ref.getDocument { (document, error) in
+            if let groupName = document?.data()?["name"] {
+                completion(groupName as! String)
+            } else {
+                completion(nil)
+            }
+        }
+    }
 }
 
 

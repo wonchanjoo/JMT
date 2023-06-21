@@ -6,21 +6,29 @@
 //
 
 import UIKit
+import Lottie
 
 class GroupCodeViewController: UIViewController {
-    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var logoView: LottieAnimationView!
     @IBOutlet weak var groupCodeField: UITextField!
     @IBOutlet weak var errorMessage: UILabel!
-    @IBOutlet weak var copyMessage: UILabel!
+    @IBOutlet weak var okButton: UIButton!
+    
     var nickname: String!
     var database = Database()
 }
 
 extension GroupCodeViewController {
     override func viewDidLoad() {
-        logoImageView.image = UIImage(named: "JMT_logo.png")
+        logoView.contentMode = .scaleAspectFit
+        logoView.loopMode = .loop
+        logoView.animationSpeed = 0.5
+        logoView.play()
+        
         errorMessage.isHidden = true
         nickname = UserDefaults.standard.object(forKey: "nickname") as! String
+        
+        okButton.tintColor = UIColor(red: 0.478, green: 0.376, blue: 0.878, alpha: 1.0)
     }
 }
 
@@ -73,7 +81,7 @@ extension GroupCodeViewController {
 
 extension GroupCodeViewController {
     func showToast(message : String, font: UIFont) {
-        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 250, height: 35))
         toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         toastLabel.textColor = UIColor.white
         toastLabel.font = font

@@ -21,8 +21,7 @@ class MainViewController: UIViewController {
 extension MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //showListButton.tintColor = .white
+
         showListButton.tintColor = UIColor(red: 0.478, green: 0.376, blue: 0.878, alpha: 1.0)
         
         groupCode = UserDefaults.standard.object(forKey: "groupCode") as! String

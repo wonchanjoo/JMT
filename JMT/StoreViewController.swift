@@ -22,6 +22,8 @@ class StoreViewController: UIViewController {
     @IBOutlet weak var linkImage: UIImageView!
     @IBOutlet weak var linkLabel: UILabel!
     
+ 
+    @IBOutlet weak var commentView: UIView!
     @IBOutlet weak var commentTableView: UITableView!
     @IBOutlet weak var commentField: UITextField!
     
@@ -75,7 +77,9 @@ extension StoreViewController {
             }
         }
         
+        commentView.layer.cornerRadius = 10
         commentTableView.dataSource = self
+        commentTableView.layer.cornerRadius = 10
     }
 }
 
@@ -110,7 +114,6 @@ extension StoreViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = commentTableView.dequeueReusableCell(withIdentifier: "CommentTableViewCell")!
-        
         
         let comment = comments![indexPath.row]
         let components = comment.components(separatedBy: ":")
